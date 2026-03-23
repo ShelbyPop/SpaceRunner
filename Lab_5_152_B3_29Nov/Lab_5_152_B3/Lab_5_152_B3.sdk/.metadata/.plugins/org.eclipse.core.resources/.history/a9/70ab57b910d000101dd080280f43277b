@@ -1,0 +1,616 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "platform.h"
+#include "xil_io.h"
+#include "xparameters.h"
+#include "xgpio.h"
+
+// ================= CONFIGURATION =================
+#define GAME_IP_BASEADDR  XPAR_MYIP_0_S00_AXI_BASEADDR
+
+#ifdef XPAR_VSYNC_INPUT_DEVICE_ID
+    #define VSYNC_GPIO_ID XPAR_VSYNC_INPUT_DEVICE_ID
+#else
+    #define VSYNC_GPIO_ID 0
+#endif
+
+// ---------------------------------------------------------------------
+// AXI register offsets
+// ---------------------------------------------------------------------
+#define REG_INPUTS       0x00
+#define REG_PLAYER_POS   0x04
+#define REG_PLAT0_POS    0x08
+#define REG_PLAT1_POS    0x0C
+#define REG_PLAT2_POS    0x10
+#define REG_PLAT3_POS    0x14
+#define REG_PLAT4_POS    0x18
+#define REG_GAMESTATE    0x1C
+#define REG_GPU_BUS0     0x20   // player sprite RAM writer
+#define REG_GPU_BUS1     0x24   // enemy position/type bus
+#define REG_GPU_BUS2     0x28   // enemy sprite RAM writer
+#define REG_GPU_BUS3     0x2C   // bullet 0 (straight)
+#define REG_GPU_BUS4     0x30   // bullet 1 (angled up)  <-- NEW
+#define REG_GPU_BUS5     0x34   // bullet 2 (angled down) <-- NEW
+#define REG_GPU_BUS6     0x38   // 6th platform
+#define REG_GPU_BUS7     0x3C   // 7-seg score bus
+
+// ---------------------------------------------------------------------
+// World / geometry
+// ---------------------------------------------------------------------
+#define NUM_PLATS    6
+#define SCREEN_W     640
+#define SCREEN_H     480
+
+// Visual player box (4x Scaled)
+#define PLAYER_SIZE      128
+#define PLAT_W           128
+#define PLAT_H           32
+#define PLAYER_X_START   200
+
+// Hitbox (Relative to 128 box)
+#define HITBOX_OFFSET_X  40
+#define HITBOX_OFFSET_Y  44
+#define HITBOX_W         48
+#define HITBOX_H         40
+
+// Enemy / Bullet dimensions
+#define WY_W             32
+#define WY_H             32
+#define BULLET_W         8
+#define BULLET_H         4
+
+// Zones
+#define ZONE_TOP_Y       48
+#define ZONE_MID_Y       240
+#define ZONE_BOT_Y       432
+#define ZONE_TOP         0
+#define ZONE_MID         1
+#define ZONE_BOT         2
+
+// Physics
+#define PLAT_SPEED        3
+#define GRAVITY_FORCE     2
+#define TERMINAL_VELOCITY 12
+#define BULLET_SPEED      (PLAT_SPEED * 2)
+#define BULLET_COOLDOWN_FRAMES 15
+
+// Buttons
+#define BTN_UP_MASK    0x01
+#define BTN_DOWN_MASK  0x02
+#define BTN_RESET_MASK 0x04
+#define BTN_START_MASK 0x08
+
+// Timing
+#define SECS_TO_START  3
+#define FRAMES_PER_SEC 60
+
+// Enemy animation timing
+#define ENEMY_T_CLOSED  15
+#define ENEMY_T_HALF    15
+#define ENEMY_T_WIDE    20
+#define ENEMY_T_CLAMP   10
+
+// Colors
+#define COL_FACE   0xD00
+#define COL_HORN   0xAAA
+#define COL_EYE    0xFFF
+#define COL_PUPIL  0x000
+#define COL_BROW   0x800
+#define COL_MOUTH  0x600
+
+// ---------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------
+typedef struct {
+    int x, y;
+    int vy;
+    int grav_dir;
+    int can_flip;
+} Player;
+
+// Dual-Layer Platform Structure
+typedef struct {
+    int x;            // Shared X position (10 bits)
+
+    // Layer A (Primary)
+    int active_a;     // 1 = Active
+    int zone_a;       // 0=Top, 1=Mid, 2=Bot
+    int type_a;
+
+    // Layer B (Transition/Secondary)
+    int active_b;     // 1 = Active (Transition)
+    int zone_b;       // 0=Top, 1=Mid, 2=Bot
+    int type_b;
+} PlatformCol;
+
+typedef struct {
+    int x, y;
+    int active;
+} Enemy;
+
+typedef struct {
+    int x, y;
+    int vy;     // Vertical velocity for angled bullets
+    int active;
+} Bullet;
+
+// ---------------------------------------------------------------------
+// Globals
+// ---------------------------------------------------------------------
+Player      p;
+PlatformCol plats[NUM_PLATS];
+Enemy       wyvern;
+Bullet      bullets[3]; // Array of 3 bullets
+XGpio       vsync_gpio;
+
+int game_state        = 0;
+int start_delay_timer = 0;
+int score_frames      = 0;
+int score_seconds     = 0;
+int idle_anim_timer   = 0;
+int bullet_cooldown   = 0;
+
+static int enemy_anim_state = 0;
+static int enemy_anim_timer = 0;
+
+int last_was_transition = 0;
+
+// ==========================================================
+// HELPERS (ZONE & TYPE)
+// ==========================================================
+static int get_y_from_zone(int z) {
+    if (z == ZONE_TOP) return ZONE_TOP_Y;
+    if (z == ZONE_MID) return ZONE_MID_Y;
+    return ZONE_BOT_Y;
+}
+
+static int get_type_for_zone(int zone) {
+    if (zone == ZONE_TOP) return 0;
+    if (zone == ZONE_BOT) return 1;
+    return (rand() % 2) ? 2 : 3;
+}
+
+static int rect_overlap(int ax, int ay, int aw, int ah,
+                        int bx, int by, int bw, int bh) {
+    return (ax < bx + bw &&
+            ax + aw > bx &&
+            ay < by + bh &&
+            ay + ah > by);
+}
+
+// ==========================================================
+// GPU LOW-LEVEL (SPRITES)
+// ==========================================================
+static void gpu_write_pixel(int x, int y, u16 color, u32 reg_addr) {
+    if (x < 0 || x >= 32 || y < 0 || y >= 32) return;
+    u32 packet = (1u << 31)
+               | ((u32)(y & 0x1F) << 17)
+               | ((u32)(x & 0x1F) << 12)
+               | (u32)(color & 0x0FFF);
+    Xil_Out32(GAME_IP_BASEADDR + reg_addr, packet);
+    Xil_Out32(GAME_IP_BASEADDR + reg_addr, 0);
+}
+
+static void load_robot_sprite(void) {
+    const u8 sprite[10][12] = {
+        {0,0,0,0,3,3,0,0,0,0,0,0}, {0,0,0,1,1,1,1,0,0,0,0,0},
+        {0,0,1,1,2,2,1,1,0,0,0,0}, {0,0,1,1,1,1,1,1,0,0,0,0},
+        {0,1,1,1,1,1,1,1,1,0,0,0}, {1,1,3,1,1,1,1,3,1,1,0,0},
+        {1,0,3,3,3,3,3,3,0,1,0,0}, {0,0,1,1,0,0,1,1,0,0,0,0},
+        {0,0,1,1,0,0,1,1,0,0,0,0}, {0,3,3,0,0,0,0,3,3,0,0,0}
+    };
+    int off_x=10, off_y=11;
+    u16 c_white = 0xFFF; u16 c_red = 0xF00; u16 c_grey = 0x888;
+
+    // Clear
+    for (int y=0; y<32; y++) for(int x=0; x<32; x++) gpu_write_pixel(x,y,0, REG_GPU_BUS0);
+    // Draw
+    for (int r=0; r<10; r++) {
+        for (int c=0; c<12; c++) {
+            u8 val = sprite[r][c];
+            if (val==0) continue;
+            u16 col = (val==1)?c_white:(val==2)?c_red:c_grey;
+            gpu_write_pixel(off_x+c, off_y+r, col, REG_GPU_BUS0);
+        }
+    }
+}
+
+static void gpu_write_enemy_pixel(int x, int y, u16 color) {
+    gpu_write_pixel(x, y, color, REG_GPU_BUS2);
+}
+
+static void enemy_draw_base_head(void) {
+    for (int y = 0; y < 32; ++y) for (int x = 0; x < 32; ++x) gpu_write_enemy_pixel(x, y, 0x000);
+
+    const int face_x_min = 2, face_x_max = 13;
+    const int face_y_min = 3, face_y_max = 13;
+
+    for (int y = 0; y < 16; ++y) {
+        for (int x = 0; x < 16; ++x) {
+            u16 color = 0x000;
+            if ((y == 1 && ((x >= 3 && x <= 5) || (x >= 10 && x <= 12))) || (y == 2 && (x == 4 || x == 11))) color = COL_HORN;
+            if (x >= face_x_min && x <= face_x_max && y >= face_y_min && y <= face_y_max && color == 0x000) color = COL_FACE;
+            if (color != 0x000) gpu_write_enemy_pixel(x, y, color);
+        }
+    }
+}
+
+static void enemy_draw_mouth(int state) {
+    for (int y = 5; y <= 13; ++y) {
+        for (int x = 3; x <= 12; ++x) {
+            u16 c = COL_FACE;
+            if (y == 5 && ((x >= 3 && x <= 6) || (x >= 9 && x <= 12))) c = COL_BROW;
+
+            if (state == 2) { // Wide
+                if ((y >= 6 && y <= 8) && ((x >= 4 && x <= 6) || (x >= 9 && x <= 11))) c = COL_EYE;
+                if (y == 7 && (x == 5 || x == 10)) c = COL_PUPIL;
+                if ((y >= 9 && y <= 13) && (x >= 4 && x <= 11)) c = COL_MOUTH;
+                if (y == 9 && (x == 5 || x == 7 || x == 9 || x == 10)) c = COL_EYE;
+            }
+            else if (state == 1) { // Half
+                if ((y >= 6 && y <= 7) && ((x >= 4 && x <= 5) || (x >= 10 && x <= 11))) c = COL_EYE;
+                if (y == 7 && (x == 4 || x == 11)) c = COL_PUPIL;
+                if ((y >= 10 && y <= 12) && (x >= 5 && x <= 10)) c = COL_MOUTH;
+                if (y == 10 && (x == 6 || x == 8)) c = COL_EYE;
+            }
+            else if (state == 0) { // Closed
+                if (y == 6 && ((x >= 4 && x <= 5) || (x >= 10 && x <= 11))) c = COL_EYE;
+                if (y == 6 && (x == 4 || x == 11)) c = COL_PUPIL;
+                if (y == 11 && (x >= 5 && x <= 10)) c = COL_MOUTH;
+                if (y == 11 && (x == 6 || x == 8)) c = COL_EYE;
+            }
+            else { // Clamp
+                if (y == 6 && (x == 4 || x == 11)) c = COL_EYE;
+                if (y == 11 && (x >= 6 && x <= 9)) c = COL_MOUTH;
+                if (y == 11 && x == 7) c = COL_EYE;
+            }
+            gpu_write_enemy_pixel(x, y, c);
+        }
+    }
+}
+
+static void load_wyvern_sprite(void) {
+    enemy_anim_state = 0;
+    enemy_anim_timer = ENEMY_T_CLOSED;
+    enemy_draw_base_head();
+    enemy_draw_mouth(enemy_anim_state);
+}
+
+static void enemy_anim_tick(void) {
+    if (enemy_anim_timer > 0) {
+        enemy_anim_timer--;
+        if (enemy_anim_timer > 0) return;
+    }
+    switch (enemy_anim_state) {
+        case 0: enemy_anim_state = 1; enemy_anim_timer = ENEMY_T_HALF; break;
+        case 1: enemy_anim_state = 2; enemy_anim_timer = ENEMY_T_WIDE; break;
+        case 2: enemy_anim_state = 3; enemy_anim_timer = ENEMY_T_CLAMP; break;
+        default: enemy_anim_state = 0; enemy_anim_timer = ENEMY_T_CLOSED; break;
+    }
+    enemy_draw_mouth(enemy_anim_state);
+}
+
+// ==========================================================
+// SCORE & PACKING
+// ==========================================================
+static u32 encode_score_bcd_4digit(int value) {
+    if (value < 0) value = 0; if (value > 9999) value = 9999;
+    int ones = value%10; int tens = (value/10)%10; int hund = (value/100)%10; int thou = (value/1000)%10;
+    return (ones) | (tens<<4) | (hund<<8) | (thou<<12);
+}
+
+static void update_7seg_raw(int val) {
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS7, encode_score_bcd_4digit(val));
+}
+
+static void update_7seg_countdown(int seconds_left) {
+    int digit = seconds_left;
+    if (digit < 1) digit = 1;
+    int val = digit * 1000 + digit * 100 + digit * 10 + digit;
+    update_7seg_raw(val);
+}
+
+static u32 pack_pos_and_type(int x, int y, int type) {
+    return ((type&0xF)<<28) | ((y&0xFFF)<<16) | (x&0xFFFF);
+}
+
+// NEW PACKER: Dual Layer
+static u32 pack_platform_col(PlatformCol *p) {
+    u32 packet = 0;
+    packet |= (p->x & 0x3FF);
+
+    // Layer A
+    if (p->active_a) {
+        packet |= (1 << 15);
+        packet |= ((p->zone_a & 0x03) << 10);
+        packet |= ((p->type_a & 0x07) << 12);
+    }
+
+    // Layer B
+    if (p->active_b) {
+        packet |= (1u << 31);
+        packet |= ((p->zone_b & 0x03) << 26);
+        packet |= ((p->type_b & 0x07) << 28);
+    }
+    return packet;
+}
+
+// ==========================================================
+// PUSH STATE TO HARDWARE
+// ==========================================================
+static void push_hardware_update(void) {
+    int player_type = (p.grav_dir == -1) ? 1 : 0;
+    Xil_Out32(GAME_IP_BASEADDR + REG_GAMESTATE, (game_state == STATE_GAMEOVER));
+    Xil_Out32(GAME_IP_BASEADDR + REG_PLAYER_POS, pack_pos_and_type(p.x, p.y, player_type));
+
+    // Platforms 0-4
+    for (int i = 0; i <= 4; i++) {
+        Xil_Out32(GAME_IP_BASEADDR + REG_PLAT0_POS + (i * 4), pack_platform_col(&plats[i]));
+    }
+    // Platform 5
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS6, pack_platform_col(&plats[5]));
+
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS1, wyvern.active ? pack_pos_and_type(wyvern.x, wyvern.y, 1) : 0);
+
+    // Bullets (3 Buses)
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS3, bullets[0].active ? pack_pos_and_type(bullets[0].x, bullets[0].y, 1) : 0);
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS4, bullets[1].active ? pack_pos_and_type(bullets[1].x, bullets[1].y, 1) : 0);
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS5, bullets[2].active ? pack_pos_and_type(bullets[2].x, bullets[2].y, 1) : 0);
+}
+
+// ==========================================================
+// SPAWN & GENERATE
+// ==========================================================
+static void spawn_wyvern(void) {
+    wyvern.active = 0;
+    int attempts = 0;
+
+    // STRICT BOUNDS: Between Top and Bottom platforms
+    int min_y = ZONE_TOP_Y + PLAT_H;
+    int max_y = ZONE_BOT_Y - WY_H;
+    int range = max_y - min_y;
+
+    while (attempts < 50) {
+        int cand_x = SCREEN_W + (rand() % 200);
+        int cand_y = min_y + (rand() % range);
+
+        int overlap = 0;
+        // Check collision against all active layers
+        for (int i = 0; i < NUM_PLATS; i++) {
+            // Layer A
+            if (plats[i].active_a) {
+                int py = get_y_from_zone(plats[i].zone_a);
+                if (rect_overlap(cand_x, cand_y, WY_W, WY_H, plats[i].x, py, PLAT_W, PLAT_H)) {
+                    overlap = 1; break;
+                }
+            }
+            // Layer B (Middle platform)
+            if (!overlap && plats[i].active_b) {
+                int py = get_y_from_zone(plats[i].zone_b);
+                if (rect_overlap(cand_x, cand_y, WY_W, WY_H, plats[i].x, py, PLAT_W, PLAT_H)) {
+                    overlap = 1; break;
+                }
+            }
+        }
+        if (!overlap) {
+            wyvern.x = cand_x; wyvern.y = cand_y; wyvern.active = 1; return;
+        }
+        attempts++;
+    }
+    // Fail safe: No spawn this frame
+    wyvern.active = 0;
+}
+
+static int check_collision_wyvern(Player *ply, Enemy *wy) {
+    if (!wy->active) return 0;
+    return rect_overlap(ply->x + HITBOX_OFFSET_X, ply->y + HITBOX_OFFSET_Y, HITBOX_W, HITBOX_H,
+                        wy->x, wy->y, WY_W, WY_H);
+}
+
+static void generate_next_platform(int index, int prev_idx) {
+    int prev_zone_target = plats[prev_idx].active_b ? plats[prev_idx].zone_b : plats[prev_idx].zone_a;
+    plats[index].x = plats[prev_idx].x + PLAT_W;
+
+    if (last_was_transition) {
+        // Enforce: Regular platform after a transition
+        plats[index].active_a = 1;
+        plats[index].zone_a   = prev_zone_target;
+        plats[index].type_a   = get_type_for_zone(prev_zone_target);
+        plats[index].active_b = 0;
+        last_was_transition = 0;
+    }
+    else {
+        // 30% chance for transition
+        if ((rand() % 100) < 30) {
+            int current_z = prev_zone_target;
+            int next_z = (rand() % 2 == 0) ? (current_z + 1) : (current_z - 1);
+            if (next_z > 2) next_z = 0; if (next_z < 0) next_z = 2;
+            if (next_z == current_z) next_z = (current_z + 1) % 3;
+
+            // Stacked Platform (A=Current, B=Target)
+            plats[index].active_a = 1;
+            plats[index].zone_a   = current_z;
+            plats[index].type_a   = get_type_for_zone(current_z);
+
+            plats[index].active_b = 1;
+            plats[index].zone_b   = next_z;
+            plats[index].type_b   = get_type_for_zone(next_z);
+            last_was_transition = 1;
+        } else {
+            // Regular extension
+            plats[index].active_a = 1;
+            plats[index].zone_a   = prev_zone_target;
+            plats[index].type_a   = get_type_for_zone(prev_zone_target);
+            plats[index].active_b = 0;
+            last_was_transition = 0;
+        }
+    }
+}
+
+static void init_game(void) {
+    p.x = PLAYER_X_START; p.y = 240; p.vy = 0; p.grav_dir = 1; p.can_flip = 0;
+    score_frames = 0; score_seconds = 0; bullet_cooldown = 0;
+    wyvern.active = 0;
+
+    // Clear all bullets
+    for(int i=0; i<3; i++) bullets[i].active = 0;
+
+    update_7seg_raw(0);
+    game_state = STATE_IDLE;
+
+    // Plat 0: Regular bottom
+    plats[0].x = PLAYER_X_START - 20;
+    plats[0].active_a = 1; plats[0].zone_a = ZONE_BOT; plats[0].type_a = get_type_for_zone(ZONE_BOT);
+    plats[0].active_b = 0;
+    last_was_transition = 0;
+
+    for (int i=1; i<NUM_PLATS; i++) generate_next_platform(i, i-1);
+    push_hardware_update();
+}
+
+// ========================================================
+// MAIN
+// ========================================================
+int main(void) {
+    init_platform();
+    if (XGpio_Initialize(&vsync_gpio, VSYNC_GPIO_ID) != XST_SUCCESS) return XST_FAILURE;
+    XGpio_SetDataDirection(&vsync_gpio, 1, 0xFFFFFFFF);
+
+    load_robot_sprite();
+    load_wyvern_sprite();
+    init_game();
+
+    int prev_vsync=0, prev_start=0, prev_reset=0, prev_up=0, prev_down=0;
+
+    while (1) {
+        int curr_vsync = XGpio_DiscreteRead(&vsync_gpio, 1);
+        if (curr_vsync == 1 && prev_vsync == 0) {
+            u32 btns = Xil_In32(GAME_IP_BASEADDR + REG_INPUTS);
+            int curr_start = (btns & BTN_START_MASK);
+            int curr_reset = (btns & BTN_RESET_MASK);
+            int curr_up    = (btns & BTN_UP_MASK);
+            int curr_down  = (btns & BTN_DOWN_MASK);
+
+            enemy_anim_tick();
+
+            if (curr_start && !prev_start && game_state == STATE_IDLE) {
+                game_state = STATE_COUNTDOWN; start_delay_timer = FRAMES_PER_SEC * SECS_TO_START;
+            }
+            if (curr_reset && !prev_reset) init_game();
+
+            if (game_state == STATE_IDLE) {
+                idle_anim_timer++;
+                p.y = (idle_anim_timer % 30 < 15) ? 240 : 244;
+                update_7seg_raw(0);
+            }
+            else if (game_state == STATE_COUNTDOWN) {
+                p.y = 240;
+                if (start_delay_timer > 0) {
+                    start_delay_timer--;
+                    update_7seg_countdown((start_delay_timer/FRAMES_PER_SEC)+1);
+                } else {
+                    game_state = STATE_PLAYING; spawn_wyvern();
+                }
+            }
+            else if (game_state == STATE_PLAYING) {
+                // Score
+                score_frames++;
+                if (score_frames >= FRAMES_PER_SEC) {
+                    score_frames = 0; score_seconds++; update_7seg_raw(score_seconds);
+                }
+                // Gravity
+                if (p.can_flip && curr_up && !prev_up) p.grav_dir = -p.grav_dir;
+                p.can_flip = 0;
+                p.vy += (GRAVITY_FORCE * p.grav_dir);
+                if (p.vy > TERMINAL_VELOCITY) p.vy = TERMINAL_VELOCITY;
+                if (p.vy < -TERMINAL_VELOCITY) p.vy = -TERMINAL_VELOCITY;
+                p.y += p.vy;
+
+                // Move & Recycle Platforms
+                for (int i=0; i<NUM_PLATS; i++) plats[i].x -= PLAT_SPEED;
+                for (int i=0; i<NUM_PLATS; i++) {
+                    if (plats[i].x < -PLAT_W) {
+                        int prev_idx = (i==0) ? (NUM_PLATS-1) : (i-1);
+                        generate_next_platform(i, prev_idx);
+                    }
+                }
+
+                // Enemy
+                if (wyvern.active) {
+                    wyvern.x -= PLAT_SPEED;
+                    if (wyvern.x + WY_W < 0) wyvern.active = 0;
+                }
+
+                // Bullet Logic (Multi-Fire)
+                if (bullet_cooldown > 0) bullet_cooldown--;
+
+                // Fire 3 bullets on press
+                if (curr_down && !prev_down && bullet_cooldown==0) {
+                    // 0: Straight
+                    bullets[0].active = 1; bullets[0].x = p.x + 80; bullets[0].y = p.y + 20; bullets[0].vy = 0;
+                    // 1: Angled Up
+                    bullets[1].active = 1; bullets[1].x = p.x + 80; bullets[1].y = p.y + 20; bullets[1].vy = -3;
+                    // 2: Angled Down
+                    bullets[2].active = 1; bullets[2].x = p.x + 80; bullets[2].y = p.y + 20; bullets[2].vy = 3;
+
+                    bullet_cooldown = BULLET_COOLDOWN_FRAMES;
+                }
+
+                // Update Bullets
+                for(int i=0; i<3; i++) {
+                    if (bullets[i].active) {
+                        bullets[i].x += BULLET_SPEED;
+                        bullets[i].y += bullets[i].vy;
+
+                        // Bounds
+                        if (bullets[i].x > SCREEN_W || bullets[i].y < 0 || bullets[i].y > SCREEN_H) {
+                            bullets[i].active = 0;
+                        }
+
+                        // Collision
+                        if (wyvern.active && rect_overlap(bullets[i].x, bullets[i].y, BULLET_W, BULLET_H, wyvern.x, wyvern.y, WY_W, WY_H)) {
+                            wyvern.active = 0;
+                            bullets[i].active = 0;
+                        }
+                    }
+                }
+
+                if (!wyvern.active) spawn_wyvern();
+
+                // DUAL LAYER COLLISION CHECK
+                for (int i=0; i<NUM_PLATS; i++) {
+                    int hit = 0; int hit_y = 0;
+                    int hb_x = p.x + HITBOX_OFFSET_X;
+                    int hb_y = p.y + HITBOX_OFFSET_Y;
+
+                    if (plats[i].active_a) {
+                        int py = get_y_from_zone(plats[i].zone_a);
+                        if (rect_overlap(hb_x, hb_y, HITBOX_W, HITBOX_H, plats[i].x, py, PLAT_W, PLAT_H)) {
+                            hit = 1; hit_y = py;
+                        }
+                    }
+                    if (!hit && plats[i].active_b) {
+                        int py = get_y_from_zone(plats[i].zone_b);
+                        if (rect_overlap(hb_x, hb_y, HITBOX_W, HITBOX_H, plats[i].x, py, PLAT_W, PLAT_H)) {
+                            hit = 1; hit_y = py;
+                        }
+                    }
+                    if (hit) {
+                        p.vy = 0; p.can_flip = 1;
+                        if (p.grav_dir == 1) p.y = hit_y - HITBOX_H - HITBOX_OFFSET_Y;
+                        else                 p.y = hit_y + PLAT_H - HITBOX_OFFSET_Y;
+                    }
+                }
+
+                if (check_collision_wyvern(&p, &wyvern)) game_state = STATE_GAMEOVER;
+                if (p.y < -100 || p.y > SCREEN_H + 100 || p.x < -100) game_state = STATE_GAMEOVER;
+            }
+
+            push_hardware_update();
+            prev_start = curr_start; prev_reset = curr_reset; prev_up = curr_up; prev_down = curr_down;
+        }
+        prev_vsync = curr_vsync;
+    }
+    cleanup_platform();
+    return 0;
+}

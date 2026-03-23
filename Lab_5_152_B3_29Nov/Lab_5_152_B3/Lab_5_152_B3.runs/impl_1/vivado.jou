@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Tue Dec  2 22:59:31 2025
+# Process ID: 30932
+# Current directory: C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.runs/impl_1
+# Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.runs/impl_1/top.vdi
+# Journal file: C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace

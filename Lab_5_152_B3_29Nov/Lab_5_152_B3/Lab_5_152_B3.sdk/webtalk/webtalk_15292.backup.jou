@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# 
+# Start of session at: Tue Nov 25 16:37:58 2025
+# Process ID: 15292
+# Current directory: C:/Users/rohit/Desktop/CS_M152B/22NOV_CODE/Lab_5_152_B3_22Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Users/rohit/Desktop/CS_M152B/22NOV_CODE/Lab_5_152_B3_22Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/webtalk/webtalk.log
+# Journal file: C:/Users/rohit/Desktop/CS_M152B/22NOV_CODE/Lab_5_152_B3_22Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

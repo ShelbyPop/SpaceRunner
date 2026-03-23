@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Project Version="1" Minor="3" DIGEST="">
+	<TOOL_VERSION Version="2018.2.2"/>
+	<MODE Name="Post-Synthesis"/>
+	<SYSTEMINFO BOARD="" PART="xc7a35tcpg236-1" ARCH="artix7" PACKAGE="cpg236" DEVICE="7a35t" SPEED="-1" LUT="20800" FF="41600" BRAM="50" DSP="90"/>
+	<HIERARCHY Name="top"/>
+	<File Type="HW_HANDOFF" Name="Game_Design.hwh" DESIGN_HIERARCHY="mb_system/Game_Design_i" BD_TYPE="DEFAULT_BD"/>
+	<File Type="BD_TCL" Name="Game_Design_bd.tcl"/>
+	<File Type="BIT" Name="top.bit"/>
+	<File Type="MMI" Name="top.mmi"/>
+	<DRIVERS>
+		<DRIVER IP_VLNV="xilinx.com:user:myip:1.0">
+			<File PATH="drivers/myip_v1_0/data/myip.mdd"/>
+			<File PATH="drivers/myip_v1_0/data/myip.tcl"/>
+			<File PATH="drivers/myip_v1_0/src/Makefile"/>
+			<File PATH="drivers/myip_v1_0/src/myip.h"/>
+			<File PATH="drivers/myip_v1_0/src/myip.c"/>
+			<File PATH="drivers/myip_v1_0/src/myip_selftest.c"/>
+		</DRIVER>
+	</DRIVERS>
+	<USEDRESOURCES LUT="0" FF="2597" BRAM="9" DSP="0"/>
+</Project>
+

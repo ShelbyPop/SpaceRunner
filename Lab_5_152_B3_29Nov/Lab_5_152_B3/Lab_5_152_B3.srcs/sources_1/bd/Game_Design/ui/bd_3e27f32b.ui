@@ -1,0 +1,77 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port clk_100MHz -pg 1 -y -360 -defaultsOSRD
+preplace port reset_rtl_0_0 -pg 1 -y -240 -defaultsOSRD
+preplace port gpio_rtl_0 -pg 1 -y -580 -defaultsOSRD
+preplace port reset_rtl_0 -pg 1 -y -380 -defaultsOSRD
+preplace port uart_rtl_0 -pg 1 -y -70 -defaultsOSRD
+preplace portBus reg_GPU_bus5_0 -pg 1 -y -220 -defaultsOSRD
+preplace portBus reg_plat4_pos_0 -pg 1 -y -360 -defaultsOSRD
+preplace portBus reg_GPU_bus0_0 -pg 1 -y -320 -defaultsOSRD
+preplace portBus reg_player_pos_0 -pg 1 -y -460 -defaultsOSRD
+preplace portBus reg_gamestate_0 -pg 1 -y -340 -defaultsOSRD
+preplace portBus reg_plat3_pos_0 -pg 1 -y -380 -defaultsOSRD
+preplace portBus reg_GPU_bus7_0 -pg 1 -y -180 -defaultsOSRD
+preplace portBus reg_plat2_pos_0 -pg 1 -y -400 -defaultsOSRD
+preplace portBus reg_GPU_bus1_0 -pg 1 -y -300 -defaultsOSRD
+preplace portBus reg_plat0_pos_0 -pg 1 -y -440 -defaultsOSRD
+preplace portBus reg_inputs_0 -pg 1 -y -410 -defaultsOSRD
+preplace portBus reg_plat1_pos_0 -pg 1 -y -420 -defaultsOSRD
+preplace portBus reg_GPU_bus6_0 -pg 1 -y -200 -defaultsOSRD
+preplace portBus reg_GPU_bus4_0 -pg 1 -y -240 -defaultsOSRD
+preplace portBus reg_GPU_bus2_0 -pg 1 -y -280 -defaultsOSRD
+preplace portBus reg_GPU_bus3_0 -pg 1 -y -260 -defaultsOSRD
+preplace inst rst_clk_wiz_0_100M -pg 1 -lvl 1 -y -220 -defaultsOSRD
+preplace inst microblaze_0_axi_periph -pg 1 -lvl 2 -y -1000 -defaultsOSRD
+preplace inst vsync_input -pg 1 -lvl 2 -y -580 -defaultsOSRD
+preplace inst myip_0 -pg 1 -lvl 2 -y -320 -defaultsOSRD
+preplace inst mdm_1 -pg 1 -lvl 1 -y -40 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 2 -y -60 -defaultsOSRD
+preplace inst microblaze_0 -pg 1 -lvl 1 -y -560 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y -370 -defaultsOSRD
+preplace inst microblaze_0_local_memory -pg 1 -lvl 2 -y -750 -defaultsOSRD
+preplace netloc reset_rtl_0_0_1 1 0 1 NJ
+preplace netloc rst_clk_wiz_0_100M_bus_struct_reset 1 1 1 210
+preplace netloc clk_wiz_0_locked 1 0 2 -340 -120 140
+preplace netloc myip_0_reg_player_pos 1 2 1 N
+preplace netloc myip_0_reg_GPU_bus0 1 2 1 N
+preplace netloc reg_inputs_0_1 1 0 2 -370J -110 220J
+preplace netloc microblaze_0_Clk 1 0 2 -360 -460 190
+preplace netloc myip_0_reg_GPU_bus1 1 2 1 N
+preplace netloc myip_0_reg_plat4_pos 1 2 1 N
+preplace netloc myip_0_reg_plat3_pos 1 2 1 N
+preplace netloc microblaze_0_axi_periph_M00_AXI 1 1 2 220 -840 560
+preplace netloc microblaze_0_M_AXI_DP 1 1 1 140
+preplace netloc microblaze_0_ilmb_1 1 1 1 180
+preplace netloc myip_0_reg_GPU_bus2 1 2 1 N
+preplace netloc myip_0_reg_GPU_bus3 1 2 1 N
+preplace netloc myip_0_reg_GPU_bus4 1 2 1 N
+preplace netloc microblaze_0_axi_periph_M01_AXI 1 1 2 240 -670 550
+preplace netloc myip_0_reg_GPU_bus5 1 2 1 N
+preplace netloc myip_0_reg_plat2_pos 1 2 1 N
+preplace netloc rst_clk_wiz_0_100M_mb_reset 1 0 2 -340 -440 150
+preplace netloc axi_uartlite_0_UART 1 2 1 NJ
+preplace netloc myip_0_reg_GPU_bus6 1 2 1 N
+preplace netloc reset_rtl_0_1 1 0 1 NJ
+preplace netloc microblaze_0_axi_periph_M02_AXI 1 1 2 230 -660 540
+preplace netloc microblaze_0_dlmb_1 1 1 1 150
+preplace netloc myip_0_reg_GPU_bus7 1 2 1 N
+preplace netloc myip_0_reg_plat0_pos 1 2 1 N
+preplace netloc microblaze_0_debug 1 0 2 -350 -450 160
+preplace netloc myip_0_reg_gamestate 1 2 1 N
+preplace netloc rst_clk_wiz_0_100M_interconnect_aresetn 1 1 1 170
+preplace netloc rst_clk_wiz_0_100M_peripheral_aresetn 1 1 1 200
+preplace netloc mdm_1_debug_sys_rst 1 0 2 -350 30 140J
+preplace netloc vsync_input_GPIO 1 2 1 NJ
+preplace netloc myip_0_reg_plat1_pos 1 2 1 N
+preplace netloc clk_100MHz_1 1 0 1 NJ
+levelinfo -pg 1 -390 -100 390 1270 -top -1160 -bot 300
+",
+}
+{
+   da_axi4_cnt: "3",
+   da_board_cnt: "5",
+   da_mb_cnt: "1",
+}

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Fri Nov 21 00:30:14 2025
+# Process ID: 28120
+# Current directory: C:/Users/forsh/Desktop/Everything/Vivado Labs/Lab_5_152_B3 - Attempt 2/Lab_5_152_B3/Lab_5_152_B3.runs/Game_Design_lmb_bram_0_synth_1
+# Command line: vivado.exe -log Game_Design_lmb_bram_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Game_Design_lmb_bram_0.tcl
+# Log file: C:/Users/forsh/Desktop/Everything/Vivado Labs/Lab_5_152_B3 - Attempt 2/Lab_5_152_B3/Lab_5_152_B3.runs/Game_Design_lmb_bram_0_synth_1/Game_Design_lmb_bram_0.vds
+# Journal file: C:/Users/forsh/Desktop/Everything/Vivado Labs/Lab_5_152_B3 - Attempt 2/Lab_5_152_B3/Lab_5_152_B3.runs/Game_Design_lmb_bram_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source Game_Design_lmb_bram_0.tcl -notrace

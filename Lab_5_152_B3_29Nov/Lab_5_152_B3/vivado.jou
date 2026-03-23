@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Wed Dec  3 18:31:44 2025
+# Process ID: 14124
+# Current directory: C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2656 C:\Users\forsh\Desktop\Everything\Vivado_Labs\Lab_5_152_B3_29Nov\Lab_5_152_B3\Lab_5_152_B3.xpr
+# Log file: C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/vivado.log
+# Journal file: C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk -hwspec C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top.hdf

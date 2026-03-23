@@ -1,0 +1,960 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "platform.h"
+#include "xil_io.h"
+#include "xparameters.h"
+#include "xgpio.h"
+
+// ================= CONFIGURATION =================
+#define GAME_IP_BASEADDR  XPAR_MYIP_0_S00_AXI_BASEADDR
+
+#ifdef XPAR_VSYNC_INPUT_DEVICE_ID
+    #define VSYNC_GPIO_ID XPAR_VSYNC_INPUT_DEVICE_ID
+#else
+    #define VSYNC_GPIO_ID 0
+#endif
+
+// ---------------------------------------------------------------------
+// AXI register offsets (must match myip_v1_0_S00_AXI and BD wiring)
+// ---------------------------------------------------------------------
+#define REG_INPUTS       0x00
+#define REG_PLAYER_POS   0x04
+#define REG_PLAT0_POS    0x08
+#define REG_PLAT1_POS    0x0C
+#define REG_PLAT2_POS    0x10
+#define REG_PLAT3_POS    0x14
+#define REG_PLAT4_POS    0x18
+#define REG_GAMESTATE    0x1C
+#define REG_GPU_BUS0     0x20   // player sprite RAM writer
+#define REG_GPU_BUS1     0x24   // enemy position/type bus
+#define REG_GPU_BUS2     0x28   // enemy sprite RAM writer
+#define REG_GPU_BUS3     0x2C   // bullet position/type bus
+// REG_GPU_BUS4..5 unused for now
+#define REG_GPU_BUS6     0x38   // 6th platform
+#define REG_GPU_BUS7     0x3C   // 7-seg score bus
+
+// ---------------------------------------------------------------------
+// World / geometry
+// ---------------------------------------------------------------------
+#define NUM_PLATS    6
+#define SCREEN_W     640
+#define SCREEN_H     480
+
+// Visual player box (4x Scaled)
+#define PLAYER_SIZE      128
+#define PLAT_W           128
+#define PLAT_H           32
+#define PLAYER_X_START   200
+
+// Hitbox (Relative to 128 box)
+#define HITBOX_OFFSET_X  40
+#define HITBOX_OFFSET_Y  44
+#define HITBOX_W         48
+#define HITBOX_H         40
+
+// Enemy drawing size (must match pixel_gen.v sprite sampling)
+#define WY_W             32
+#define WY_H             32
+
+// Zones
+#define ZONE_TOP_Y       48
+#define ZONE_MID_Y       240
+#define ZONE_BOT_Y       432
+#define ZONE_VARIANCE    10
+#define ZONE_TOP         0
+#define ZONE_MID         1
+#define ZONE_BOT         2
+#define MIN_Y_DIFF       (PLAYER_SIZE + PLAT_H)
+
+// Physics
+#define PLAT_SPEED        3
+#define GRAVITY_FORCE     2      // integer gravity
+#define TERMINAL_VELOCITY 12
+
+// Bullet (must match pixel_gen.v)
+#define BULLET_W              8
+#define BULLET_H              4
+#define BULLET_SPEED          (PLAT_SPEED * 2)   // bullet faster than world scroll
+#define BULLET_COOLDOWN_FRAMES 15               // fire rate (frames between shots)
+
+// Buttons
+#define BTN_UP_MASK    0x01
+#define BTN_DOWN_MASK  0x02
+#define BTN_RESET_MASK 0x04 // Center (Restart)
+#define BTN_START_MASK 0x08 // Left (Start)
+
+// Timing
+#define SECS_TO_START  3
+#define FRAMES_PER_SEC 60
+
+// Enemy animation timing (in frames at 60 FPS)
+// Total cycle time ≈ ENEMY_T_HALF + ENEMY_T_WIDE + ENEMY_T_CLAMP + ENEMY_T_CLOSED
+// 15 + 15 + 20 + 10 = 60 frames ~= 1 second
+#define ENEMY_T_CLOSED  15   // stay relaxed/closed
+#define ENEMY_T_HALF    15   // half-open
+#define ENEMY_T_WIDE    20   // mouth wide-open
+#define ENEMY_T_CLAMP   10   // clamping shut
+
+// Game states
+#define STATE_IDLE       0
+#define STATE_COUNTDOWN  1
+#define STATE_PLAYING    2
+#define STATE_GAMEOVER   3
+
+// Enemy sprite palette (demon head)
+#define COL_FACE   0xD00  // bright red face
+#define COL_HORN   0xAAA  // gray horns
+#define COL_EYE    0xFFF  // white eyes / teeth
+#define COL_PUPIL  0x000  // black pupils
+#define COL_BROW   0x800  // dark red brows
+#define COL_MOUTH  0x600  // dark red mouth interior
+
+// ---------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------
+typedef struct {
+    int x, y;
+    int vy;
+    int grav_dir;
+    int can_flip;
+} Player;
+
+// New Dual-Layer Platform Structure
+typedef struct {
+    int x;            // Shared X position (10 bits)
+
+    // Layer A (Primary)
+    int active_a;     // 1 = Active
+    int zone_a;       // 0=Top, 1=Mid, 2=Bot
+    int type_a;
+
+    // Layer B (Transition/Secondary)
+    int active_b;     // 1 = Active (Transition), 0 = Empty (Regular)
+    int zone_b;       // 0=Top, 1=Mid, 2=Bot
+    int type_b;
+} PlatformCol;
+
+typedef struct {
+    int x, y;
+    int active;
+} Enemy;
+
+typedef struct {
+    int x, y;
+    int active;
+} Bullet;
+
+// ---------------------------------------------------------------------
+// Globals
+// ---------------------------------------------------------------------
+Player   p;
+PlatformCol plats[NUM_PLATS];
+Enemy    wyvern;                 // enemy logic (demon head)
+Bullet   bullet;                 // single bullet
+XGpio    vsync_gpio;
+
+int game_state        = STATE_IDLE;
+int start_delay_timer = 0;
+int score_frames      = 0;
+int score_seconds     = 0;
+int idle_anim_timer   = 0;
+int bullet_cooldown   = 0;       // frames until we can fire again
+
+// Enemy mouth/eye animation
+static int enemy_anim_state = 0;  // 0=closed,1=half,2=wide,3=clamp
+static int enemy_anim_timer = 0;  // frames until next change
+
+int last_was_transition = 0; // State memory for platform generation
+
+
+// ==========================================================
+// GPU HELPERS – PLAYER SPRITE (REG_GPU_BUS0)
+// ==========================================================
+static void gpu_write_pixel(int x, int y, u16 color) {
+    if (x < 0 || x >= 32 || y < 0 || y >= 32) return;
+
+    // bit31 = WE, [21:17]=Y, [16:12]=X, [11:0]=color
+    u32 packet = (1u << 31)
+               | ((u32)(y & 0x1F) << 17)
+               | ((u32)(x & 0x1F) << 12)
+               | (u32)(color & 0x0FFF);
+
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS0, packet);
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS0, 0);  // clear WE edge
+}
+
+static void load_robot_sprite(void) {
+    const u8 sprite[10][12] = {
+        {0,0,0,0,3,3,0,0,0,0,0,0},
+        {0,0,0,1,1,1,1,0,0,0,0,0},
+        {0,0,1,1,2,2,1,1,0,0,0,0},
+        {0,0,1,1,1,1,1,1,0,0,0,0},
+        {0,1,1,1,1,1,1,1,1,0,0,0},
+        {1,1,3,1,1,1,1,3,1,1,0,0},
+        {1,0,3,3,3,3,3,3,0,1,0,0},
+        {0,0,1,1,0,0,1,1,0,0,0,0},
+        {0,0,1,1,0,0,1,1,0,0,0,0},
+        {0,3,3,0,0,0,0,3,3,0,0,0}
+    };
+
+    u16 c_white = 0xFFF;
+    u16 c_red   = 0xF00;
+    u16 c_grey  = 0x888;
+    int off_x   = 10;
+    int off_y   = 11;
+
+    // Clear 32x32 sprite RAM
+    for (int y = 0; y < 32; y++)
+        for (int x = 0; x < 32; x++)
+            gpu_write_pixel(x, y, 0x000);
+
+    // Draw robot body
+    for (int r = 0; r < 10; r++) {
+        for (int c = 0; c < 12; c++) {
+            u8 val = sprite[r][c];
+            if (val == 0) continue;
+
+            u16 color = (val == 1) ? c_white
+                        : (val == 2) ? c_red
+                                     : c_grey;
+            gpu_write_pixel(off_x + c, off_y + r, color);
+        }
+    }
+}
+
+// ==========================================================
+// GPU HELPER – ENEMY SPRITE (REG_GPU_BUS2)
+// ==========================================================
+static void gpu_write_enemy_pixel(int x, int y, u16 color) {
+    if (x < 0 || x >= 32 || y < 0 || y >= 32) return;
+
+    // Same encoding as player sprite, but use REG_GPU_BUS2
+    u32 packet = (1u << 31)
+               | ((u32)(y & 0x1F) << 17)
+               | ((u32)(x & 0x1F) << 12)
+               | (u32)(color & 0x0FFF);
+
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS2, packet);
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS2, 0);
+}
+
+// Draw everything except the eyes/mouth region (face, horns only)
+static void enemy_draw_base_head(void) {
+    // Clear the entire 32x32 enemy RAM
+    for (int y = 0; y < 32; ++y) {
+        for (int x = 0; x < 32; ++x) {
+            gpu_write_enemy_pixel(x, y, 0x000);
+        }
+    }
+
+    // 16x16 demon head in top-left quadrant (0..15, 0..15)
+    const int face_x_min = 2;
+    const int face_x_max = 13;
+    const int face_y_min = 3;
+    const int face_y_max = 13;
+
+    for (int y = 0; y < 16; ++y) {
+        for (int x = 0; x < 16; ++x) {
+            u16 color = 0x000;
+
+            // Horns
+            if ((y == 1 && ((x >= 3 && x <= 5) || (x >= 10 && x <= 12))) ||
+                (y == 2 && (x == 4 || x == 11))) {
+                color = COL_HORN;
+            }
+
+            // Base red face block
+            if (x >= face_x_min && x <= face_x_max &&
+                y >= face_y_min && y <= face_y_max) {
+                if (color == 0x000)
+                    color = COL_FACE;
+            }
+
+            // No brows / eyes / mouth here; those are animated.
+
+            if (color != 0x000) {
+                gpu_write_enemy_pixel(x, y, color);
+            }
+        }
+    }
+}
+
+// state: 0 = closed, 1 = half-open, 2 = wide-open, 3 = clamp (bite)
+static void enemy_draw_mouth(int state) {
+    // Animate eyes + mouth + brows in a block inside the face
+    for (int y = 5; y <= 13; ++y) {
+        for (int x = 3; x <= 12; ++x) {
+            u16 c = COL_FACE;   // default: fill with face color
+
+            // Brows (static angry look)
+            if (y == 5 && ((x >= 3 && x <= 6) || (x >= 9 && x <= 12))) {
+                c = COL_BROW;
+            }
+
+            // ==========================
+            // EYES (change with state)
+            // ==========================
+            if (state == 2) {
+                // Wide-open: biggest eyes (3x3 blocks)
+                if ((y >= 6 && y <= 8) &&
+                    ((x >= 4 && x <= 6) || (x >= 9 && x <= 11))) {
+                    c = COL_EYE;
+                }
+                // Pupils centered in those eyes
+                if (y == 7 && (x == 5 || x == 10)) {
+                    c = COL_PUPIL;
+                }
+            }
+            else if (state == 1) {
+                // Half-open: medium eyes (2x2)
+                if ((y >= 6 && y <= 7) &&
+                    ((x >= 4 && x <= 5) || (x >= 10 && x <= 11))) {
+                    c = COL_EYE;
+                }
+                if (y == 7 && (x == 4 || x == 11)) {
+                    c = COL_PUPIL;
+                }
+            }
+            else if (state == 0) {
+                // Relaxed closed: normal eyes (2x1)
+                if (y == 6 &&
+                    ((x >= 4 && x <= 5) || (x >= 10 && x <= 11))) {
+                    c = COL_EYE;
+                }
+                if (y == 6 && (x == 4 || x == 11)) {
+                    c = COL_PUPIL;
+                }
+            }
+            else {
+                // state == 3: clamp bite -> tiny eyes
+                if (y == 6 && (x == 4 || x == 11)) {
+                    c = COL_EYE;
+                }
+            }
+
+            // ==========================
+            // MOUTH (change with state)
+            // ==========================
+            if (state == 2) {
+                // Wide-open: huge maw using most of lower face
+                if ((y >= 9 && y <= 13) && (x >= 4 && x <= 11)) {
+                    c = COL_MOUTH;
+                }
+                // Top teeth on the upper row of the mouth
+                if (y == 9 && (x == 5 || x == 7 || x == 9 || x == 10)) {
+                    c = COL_EYE;
+                }
+            }
+            else if (state == 1) {
+                // Half-open: medium-height mouth
+                if ((y >= 10 && y <= 12) && (x >= 5 && x <= 10)) {
+                    c = COL_MOUTH;
+                }
+                if (y == 10 && (x == 6 || x == 8)) {
+                    c = COL_EYE;
+                }
+            }
+            else if (state == 0) {
+                // Relaxed closed: thin grin
+                if (y == 11 && (x >= 5 && x <= 10)) {
+                    c = COL_MOUTH;
+                }
+                if (y == 11 && (x == 6 || x == 8)) {
+                    c = COL_EYE;
+                }
+            }
+            else {
+                // Clamp bite: very tight, small mouth in the center
+                if (y == 11 && (x >= 6 && x <= 9)) {
+                    c = COL_MOUTH;
+                }
+                // Single central tooth for "snap" feel
+                if (y == 11 && x == 7) {
+                    c = COL_EYE;
+                }
+            }
+
+            gpu_write_enemy_pixel(x, y, c);
+        }
+    }
+}
+
+// Initial load: draw head and start in "closed" state
+static void load_wyvern_sprite(void) {
+    enemy_anim_state = 0;             // closed
+    enemy_anim_timer = ENEMY_T_CLOSED;
+
+    enemy_draw_base_head();
+    enemy_draw_mouth(enemy_anim_state);
+}
+
+// Called once per frame (VSYNC) to advance mouth+eye animation
+static void enemy_anim_tick(void) {
+    if (enemy_anim_timer > 0) {
+        enemy_anim_timer--;
+        if (enemy_anim_timer > 0)
+            return; // not time to change yet
+    }
+
+    // Cycle: closed -> half -> wide -> clamp -> closed -> ...
+    switch (enemy_anim_state) {
+    case 0: // closed -> half-open
+        enemy_anim_state = 1;
+        enemy_anim_timer = ENEMY_T_HALF;
+        break;
+
+    case 1: // half-open -> wide-open
+        enemy_anim_state = 2;
+        enemy_anim_timer = ENEMY_T_WIDE;
+        break;
+
+    case 2: // wide-open -> clamp (bite)
+        enemy_anim_state = 3;
+        enemy_anim_timer = ENEMY_T_CLAMP;
+        break;
+
+    case 3: // clamp -> closed
+    default:
+        enemy_anim_state = 0;
+        enemy_anim_timer = ENEMY_T_CLOSED;
+        break;
+    }
+
+    enemy_draw_mouth(enemy_anim_state);
+}
+
+// ==========================================================
+// SCORE & HELPERS
+// ==========================================================
+static u32 encode_score_bcd_4digit(int value) {
+    if (value < 0)    value = 0;
+    if (value > 9999) value = 9999;
+
+    int ones      =  value        % 10;
+    int tens      = (value / 10)  % 10;
+    int hundreds  = (value / 100) % 10;
+    int thousands = (value / 1000) % 10;
+
+    u32 word = 0;
+    word |= (u32)ones;
+    word |= (u32)tens      << 4;
+    word |= (u32)hundreds  << 8;
+    word |= (u32)thousands << 12;
+    return word;
+}
+
+static void update_7seg_raw(int val) {
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS7, encode_score_bcd_4digit(val));
+}
+
+static void update_7seg_countdown(int seconds_left) {
+    int digit = seconds_left;
+    if (digit < 1) digit = 1;
+    int val = digit * 1000 + digit * 100 + digit * 10 + digit;
+    update_7seg_raw(val);
+}
+
+// ==========================================================
+// PACKING HELPERS
+// ==========================================================
+static u32 pack_pos_and_type(int x, int y, int type) {
+    u32 x_bits = (u32)x & 0xFFFF;
+    u32 y_bits = ((u32)y & 0x0FFF) << 16;
+    u32 t_bits = ((u32)type & 0x0F) << 28;
+    return t_bits | y_bits | x_bits;
+}
+
+// NEW PACKER for Dual-Layer
+static u32 pack_platform_col(PlatformCol *p) {
+    // [9:0] X
+    // [11:10] ZoneA, [14:12] TypeA, [15] ActiveA
+    // [27:26] ZoneB, [30:28] TypeB, [31] ActiveB
+    u32 packet = 0;
+
+    // Shared X
+    packet |= (p->x & 0x3FF);
+
+    // Layer A
+    if (p->active_a) {
+        packet |= (1 << 15);
+        packet |= ((p->zone_a & 0x03) << 10);
+        packet |= ((p->type_a & 0x07) << 12);
+    }
+
+    // Layer B
+    if (p->active_b) {
+        packet |= (1u << 31);
+        packet |= ((p->zone_b & 0x03) << 26);
+        packet |= ((p->type_b & 0x07) << 28);
+    }
+
+    return packet;
+}
+
+// ==========================================================
+// ZONE HELPERS
+// ==========================================================
+static int get_y_for_zone(int zone) {
+
+	if (zone == ZONE_TOP) return ZONE_TOP_Y;
+	if (zone == ZONE_MID) return ZONE_MID_Y;
+	return ZONE_BOT_Y;
+
+}
+static int get_type_for_zone(int zone) {
+    if (zone == ZONE_TOP) return 0;
+    if (zone == ZONE_BOT) return 1;
+    return (rand() % 2) ? 2 : 3;
+}
+
+// ==========================================================
+// ENEMY & COLLISION HELPERS
+// ==========================================================
+static int rect_overlap(int ax, int ay, int aw, int ah,
+                        int bx, int by, int bw, int bh) {
+    return (ax < bx + bw &&
+            ax + aw > bx &&
+            ay < by + bh &&
+            ay + ah > by);
+}
+
+static void spawn_wyvern(void) {
+    wyvern.active = 0;
+
+    int attempts = 0;
+    while (attempts < 50) {
+        // Spawn just off the right side so it scrolls into view
+        int cand_x = SCREEN_W + (rand() % 200);     // 640..839
+        // Random height across valid zones
+        int min_y = ZONE_TOP_Y - 20;
+        int max_y = ZONE_BOT_Y + PLAT_H + 20;
+        int cand_y = min_y + (rand() % (max_y - min_y));
+
+        int overlap = 0;
+        // Collision check against ALL active layers of all columns
+        for (int i = 0; i < NUM_PLATS; i++) {
+            // Check Layer A
+            if (plats[i].active_a) {
+                int py = get_y_from_zone(plats[i].zone_a);
+                if (rect_overlap(cand_x, cand_y, WY_W, WY_H,
+                                 plats[i].x, py, PLAT_W, PLAT_H)) {
+                    overlap = 1;
+                    break;
+                }
+            }
+            // Check Layer B
+            if (!overlap && plats[i].active_b) {
+                int py = get_y_from_zone(plats[i].zone_b);
+                if (rect_overlap(cand_x, cand_y, WY_W, WY_H,
+                                 plats[i].x, py, PLAT_W, PLAT_H)) {
+                    overlap = 1;
+                    break;
+                }
+            }
+        }
+        if (!overlap) {
+            wyvern.x      = cand_x;
+            wyvern.y      = cand_y;
+            wyvern.active = 1;
+            return;
+        }
+        attempts++;
+    }
+
+    // Fallback if no clean spot found
+    wyvern.x      = SCREEN_W + 50;
+    wyvern.y      = SCREEN_H / 2 - WY_W / 2;
+    wyvern.active = 1;
+}
+
+static int check_collision_wyvern(Player *ply, Enemy *wy) {
+    if (!wy->active) return 0;
+
+    int hb_x = ply->x + HITBOX_OFFSET_X;
+    int hb_y = ply->y + HITBOX_OFFSET_Y;
+
+    return rect_overlap(hb_x, hb_y, HITBOX_W, HITBOX_H,
+                        wy->x, wy->y, WY_W, WY_H);
+}
+
+// ==========================================================
+// PUSH STATE TO HARDWARE
+// ==========================================================
+static void push_hardware_update(void) {
+    int player_type = (p.grav_dir == -1) ? 1 : 0;
+
+    // GAMESTATE: bit0 = game over
+    Xil_Out32(GAME_IP_BASEADDR + REG_GAMESTATE,
+              (game_state == STATE_GAMEOVER) ? 1 : 0);
+
+    // Player (with flip bit in type)
+    Xil_Out32(GAME_IP_BASEADDR + REG_PLAYER_POS,
+              pack_pos_and_type(p.x, p.y, player_type));
+
+    // Platforms 0-4 (Contiguous registers)
+    for (int i = 0; i <= 4; i++) {
+        Xil_Out32(GAME_IP_BASEADDR + REG_PLAT0_POS + (i * 4),
+                  pack_platform_col(&plats[i]));
+    }
+
+    // 6th platform via REG_GPU_BUS6
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS6,
+              pack_platform_col(&plats[5]));
+
+    // Enemy via REG_GPU_BUS1
+    u32 wy_word;
+    if (wyvern.active) {
+        wy_word = pack_pos_and_type(wyvern.x, wyvern.y, 1); // type=1 => active
+    } else {
+        wy_word = 0;                                        // type=0 => off
+    }
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS1, wy_word);
+
+    // Bullet via REG_GPU_BUS3
+    u32 bullet_word;
+    if (bullet.active) {
+        bullet_word = pack_pos_and_type(bullet.x, bullet.y, 1); // type=1 => active
+    } else {
+        bullet_word = 0;                                        // type=0 => off
+    }
+    Xil_Out32(GAME_IP_BASEADDR + REG_GPU_BUS3, bullet_word);
+}
+
+// ==========================================================
+// PLATFORM HELPERS
+// ==========================================================
+
+// check_collision removed to main() inline (was only called once)
+
+static void generate_next_platform(int index, int prev_idx) {
+    int prev_zone_target;
+
+    // Determine the "landing" zone of the previous platform column
+    if (plats[prev_idx].active_b) {
+        prev_zone_target = plats[prev_idx].zone_b;
+    } else {
+        prev_zone_target = plats[prev_idx].zone_a;
+    }
+
+    // Always move forward by one platform width
+    plats[index].x = plats[prev_idx].x + PLAT_W;
+
+    if (last_was_transition) {
+        // RULE: Transition MUST be followed by Regular at the target height
+        // This gives the player space to land.
+        plats[index].active_a = 1;
+        plats[index].zone_a   = prev_zone_target;
+        plats[index].type_a   = get_type_for_zone(prev_zone_target);
+
+        plats[index].active_b = 0; // Empty
+        last_was_transition = 0;
+    }
+    else {
+        // Last was Regular. Decision: 30% Transition, 70% Extend.
+        int roll = rand() % 100;
+
+        if (roll < 30) {
+            // --- GENERATE TRANSITION (Two stacked platforms) ---
+            int current_z = prev_zone_target;
+            // Pick a new zone that isn't the current one
+            int next_z = (rand() % 2 == 0) ? (current_z + 1) : (current_z - 1);
+
+            // Safe wrap 0-2
+            if (next_z > 2) next_z = 0;
+            if (next_z < 0) next_z = 2;
+            if (next_z == current_z) next_z = (current_z + 1) % 3;
+
+            // Layer A: Current Zone
+            plats[index].active_a = 1;
+            plats[index].zone_a   = current_z;
+            plats[index].type_a   = get_type_for_zone(current_z);
+
+            // Layer B: Next Zone (Target)
+            plats[index].active_b = 1;
+            plats[index].zone_b   = next_z;
+            plats[index].type_b   = get_type_for_zone(next_z);
+
+            last_was_transition = 1;
+        }
+        else {
+            // --- EXTEND REGULAR (One platform) ---
+            plats[index].active_a = 1;
+            plats[index].zone_a   = prev_zone_target;
+            plats[index].type_a   = get_type_for_zone(prev_zone_target);
+
+            plats[index].active_b = 0;
+            last_was_transition = 0;
+        }
+    }
+}
+
+// ========================================================
+// INITIALIZATION
+// ========================================================
+static void init_game(void) {
+    p.x        = PLAYER_X_START;
+    p.y        = 240;
+    p.vy       = 0;
+    p.grav_dir = 1;
+    p.can_flip = 0;
+
+    score_frames    = 0;
+    score_seconds   = 0;
+    idle_anim_timer = 0;
+    bullet_cooldown = 0;
+
+    // Bullet starts inactive
+    bullet.active = 0;
+    bullet.x      = 0;
+    bullet.y      = 0;
+
+    // Reset enemy animation to closed mouth with full closed duration
+    enemy_anim_state = 0;
+    enemy_anim_timer = ENEMY_T_CLOSED;
+    enemy_draw_mouth(enemy_anim_state);
+
+    update_7seg_raw(0);
+
+    // Platform 0: Safe regular bottom
+    plats[0].x = PLAYER_X_START - 20;
+    plats[0].active_a = 1;
+    plats[0].zone_a   = ZONE_BOT;
+    plats[0].type_a   = get_type_for_zone(ZONE_BOT);
+    plats[0].active_b = 0;
+    last_was_transition = 0;
+
+    for (int i = 1; i < NUM_PLATS; i++)
+        generate_next_platform(i, i - 1);
+
+    // Enemy starts inactive; will be spawned when we enter PLAYING
+    wyvern.active = 0;
+    wyvern.x      = 0;
+    wyvern.y      = 0;
+
+    game_state = STATE_IDLE;
+
+    // Force hardware to initial state
+    push_hardware_update();
+}
+
+// ========================================================
+// MAIN
+// ========================================================
+int main(void) {
+    init_platform();
+
+    if (XGpio_Initialize(&vsync_gpio, VSYNC_GPIO_ID) != XST_SUCCESS)
+        return XST_FAILURE;
+    XGpio_SetDataDirection(&vsync_gpio, 1, 0xFFFFFFFF);  // VSYNC as input
+
+    // Load sprites into BRAMs
+    load_robot_sprite();      // player
+    load_wyvern_sprite();     // enemy head + initial mouth/eyes
+
+    init_game();
+
+    int prev_vsync     = 0;
+    int prev_start_btn = 0;
+    int prev_reset_btn = 0;
+    int prev_up_btn    = 0;   // track btnU for gravity toggle
+    int prev_down_btn  = 0;   // track btnD for bullet firing
+
+    while (1) {
+        int curr_vsync = XGpio_DiscreteRead(&vsync_gpio, 1);
+
+        // Rising edge of VSYNC = once per frame
+        if (curr_vsync == 1 && prev_vsync == 0) {
+            u32 btns = Xil_In32(GAME_IP_BASEADDR + REG_INPUTS);
+
+            int curr_start_btn = (btns & BTN_START_MASK);
+            int curr_reset_btn = (btns & BTN_RESET_MASK);
+            int curr_up_btn    = (btns & BTN_UP_MASK);
+            int curr_down_btn  = (btns & BTN_DOWN_MASK);
+
+            // Update enemy mouth/eye animation every frame
+            enemy_anim_tick();
+
+            // BUTTON LOGIC (start / reset)
+            if (curr_start_btn && !prev_start_btn) {
+                if (game_state == STATE_IDLE) {
+                    game_state        = STATE_COUNTDOWN;
+                    start_delay_timer = FRAMES_PER_SEC * SECS_TO_START;
+                }
+            }
+
+            if (curr_reset_btn && !prev_reset_btn) {
+                init_game();
+            }
+
+            // ---------------- STATE MACHINE ----------------
+            if (game_state == STATE_IDLE) {
+                // small bobbing idle animation
+                idle_anim_timer++;
+                if ((idle_anim_timer % 30) < 15)
+                    p.y = 240;
+                else
+                    p.y = 244;
+                update_7seg_raw(0);
+            }
+            else if (game_state == STATE_COUNTDOWN) {
+                p.y = 240;
+                if (start_delay_timer > 0) {
+                    start_delay_timer--;
+                    int sec = (start_delay_timer / FRAMES_PER_SEC) + 1;
+                    update_7seg_countdown(sec);
+                } else {
+                    game_state = STATE_PLAYING;
+                    spawn_wyvern();     // first enemy when gameplay starts
+                }
+            }
+            else if (game_state == STATE_PLAYING) {
+                // ----- score -----
+                score_frames++;
+                if (score_frames >= FRAMES_PER_SEC) {
+                    score_frames = 0;
+                    score_seconds++;
+                    update_7seg_raw(score_seconds);
+                }
+
+                // ----- gravity controls (single-button toggle on btnU) -----
+                int up_rising_edge = (curr_up_btn && !prev_up_btn);  // press event
+
+                if (p.can_flip && up_rising_edge) {
+                    // Toggle gravity between +1 and -1
+                    p.grav_dir = -p.grav_dir;
+                }
+                p.can_flip = 0;
+
+                // ----- vertical motion -----
+                p.vy += (GRAVITY_FORCE * p.grav_dir);
+                if (p.vy >  TERMINAL_VELOCITY)  p.vy =  TERMINAL_VELOCITY;
+                if (p.vy < -TERMINAL_VELOCITY)  p.vy = -TERMINAL_VELOCITY;
+                p.y += p.vy;
+
+                // ----- platforms move left -----
+                for (int i = 0; i < NUM_PLATS; i++)
+                    plats[i].x -= PLAT_SPEED;
+
+                // regenerate platforms
+                for (int i = 0; i < NUM_PLATS; i++) {
+                    if (plats[i].x < -PLAT_W) {
+                        int prev_idx = (i == 0) ? (NUM_PLATS - 1) : (i - 1);
+                        generate_next_platform(i, prev_idx);
+                    }
+                }
+
+                // ----- enemy scroll -----
+                if (wyvern.active) {
+                    wyvern.x -= PLAT_SPEED;
+                    if (wyvern.x + WY_W < 0) {
+                        wyvern.active = 0;
+                    }
+                }
+
+                // ----- bullet cooldown -----
+                if (bullet_cooldown > 0)
+                    bullet_cooldown--;
+
+                // ----- bullet firing (btnD rising edge) -----
+                int down_rising_edge = (curr_down_btn && !prev_down_btn);
+                if (down_rising_edge && !bullet.active && bullet_cooldown == 0) {
+                    int hb_x = p.x + HITBOX_OFFSET_X;
+                    int hb_y = p.y + HITBOX_OFFSET_Y;
+
+                    bullet.x      = hb_x + HITBOX_W;                        // front of player
+                    bullet.y      = hb_y + (HITBOX_H / 2) - (BULLET_H / 2); // mid-height
+                    bullet.active = 1;
+                    bullet_cooldown = BULLET_COOLDOWN_FRAMES;
+                }
+
+                // ----- bullet movement & despawn -----
+                if (bullet.active) {
+                    bullet.x += BULLET_SPEED;
+                    if (bullet.x > SCREEN_W) {
+                        bullet.active = 0;
+                    }
+                }
+
+                // ----- bullet vs enemy collision -----
+                if (bullet.active && wyvern.active) {
+                    if (rect_overlap(bullet.x, bullet.y, BULLET_W, BULLET_H,
+                                     wyvern.x, wyvern.y, WY_W, WY_H)) {
+                        wyvern.active = 0;
+                        bullet.active = 0;
+                    }
+                }
+
+                // ----- enemy respawn when inactive -----
+                if (!wyvern.active) {
+                    spawn_wyvern();
+                }
+
+                // ----- player vs platforms (UPDATED FOR DUAL LAYERS) -----
+                for (int i = 0; i < NUM_PLATS; i++) {
+                    int hit = 0;
+                    int hit_y = 0;
+                    int hb_x = p.x + HITBOX_OFFSET_X;
+                    int hb_y = p.y + HITBOX_OFFSET_Y;
+
+                    // Layer A Check
+                    if (plats[i].active_a) {
+                        int py = get_y_from_zone(plats[i].zone_a);
+                        if (rect_overlap(hb_x, hb_y, HITBOX_W, HITBOX_H, plats[i].x, py, PLAT_W, PLAT_H)) {
+                            hit = 1; hit_y = py;
+                        }
+                    }
+                    // Layer B Check (If not hit A, or logic dictates)
+                    if (!hit && plats[i].active_b) {
+                        int py = get_y_from_zone(plats[i].zone_b);
+                        if (rect_overlap(hb_x, hb_y, HITBOX_W, HITBOX_H, plats[i].x, py, PLAT_W, PLAT_H)) {
+                            hit = 1; hit_y = py;
+                        }
+                    }
+
+                    if (hit) {
+                        p.vy       = 0;
+                        p.can_flip = 1;
+
+                        if (p.grav_dir == 1) {
+                            // Gravity downwards: stand on top
+                            p.y = hit_y - HITBOX_H - HITBOX_OFFSET_Y;
+                        } else {
+                            // Gravity upwards: stand on underside
+                            p.y = hit_y + PLAT_H - HITBOX_OFFSET_Y;
+                        }
+                    }
+                }
+
+                // ----- enemy collision => game over -----
+                if (check_collision_wyvern(&p, &wyvern)) {
+                    game_state    = STATE_GAMEOVER;
+                    bullet.active = 0;   // clear bullet on death
+                }
+
+                // ----- world bounds (fell off screen / behind) -----
+                int hb_x = p.x + HITBOX_OFFSET_X;
+                int hb_y = p.y + HITBOX_OFFSET_Y;
+                if (hb_y < 0 ||
+                    hb_y + HITBOX_H > SCREEN_H ||
+                    hb_x + HITBOX_W < 0) {
+                    game_state    = STATE_GAMEOVER;
+                    bullet.active = 0;
+                }
+            }
+
+            // Push all updated positions & state to hardware every frame
+            push_hardware_update();
+
+            // Update previous button states for edge detection
+            prev_start_btn = curr_start_btn;
+            prev_reset_btn = curr_reset_btn;
+            prev_up_btn    = curr_up_btn;
+            prev_down_btn  = curr_down_btn;
+        }
+
+        prev_vsync = curr_vsync;
+    }
+
+    cleanup_platform();
+    return 0;
+}

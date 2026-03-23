@@ -1,0 +1,3306 @@
+!SESSION 2025-12-03 18:33:00.010 -----------------------------------------------
+eclipse.buildId=2018.2
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk
+
+This is a continuation of log file C:\Users\forsh\Desktop\Everything\Vivado_Labs\Lab_5_152_B3_29Nov\Lab_5_152_B3\Lab_5_152_B3.sdk\.metadata\.bak_0.log
+Created Time: 2025-12-03 18:59:52.313
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.313
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.314
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.314
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.315
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.316
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.316
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.327
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.328
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.370
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.370
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.381
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.382
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.500
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.540
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.554
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.554
+!MESSAGE XSCT Command: [con], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 18:59:52.557
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:53.356
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:53.357
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.516
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.517
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#3]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.518
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.520
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.521
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.524
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.524
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.531
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.532
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.545
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.545
+!MESSAGE XSCT Command: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:57.955
+!MESSAGE XSCT command with result: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:58.769
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:04:58.771
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:00.793
+!MESSAGE XSCT Command: [disconnect tcfchan#3], Thread: Thread-220
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:00.795
+!MESSAGE XSCT command with result: [disconnect tcfchan#3], Result: [null, ]. Thread: Thread-220
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-12-03 19:05:01.805
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.806
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.808
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#4]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.808
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.813
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.813
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.816
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.816
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.823
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.823
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.844
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.844
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.867
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.868
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.869
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#4]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.869
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.871
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.872
+!MESSAGE XSCT Command: [version -server], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.872
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.872
+!MESSAGE XSCT Command: [version], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.873
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.873
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.875
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.875
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.882
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.882
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.885
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.885
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.892
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.893
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.895
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.895
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.902
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.902
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.905
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.905
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.912
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.912
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.920
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.921
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.922
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.922
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.923
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.923
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.935
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.935
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.979
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.979
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.990
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:01.990
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:02.109
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:02.151
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:02.176
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:02.177
+!MESSAGE XSCT Command: [con], Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 19:05:02.180
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-20
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:19:58.181
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:19:58.183
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.497
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.499
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#4]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.499
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.502
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.503
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.505
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.505
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.512
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.512
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.520
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.520
+!MESSAGE XSCT Command: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:02.931
+!MESSAGE XSCT command with result: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:03.744
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:03.746
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:06.299
+!MESSAGE XSCT Command: [disconnect tcfchan#4], Thread: Thread-346
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:06.301
+!MESSAGE XSCT command with result: [disconnect tcfchan#4], Result: [null, ]. Thread: Thread-346
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-12-03 20:20:07.312
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.312
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.315
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#5]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.315
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.319
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.320
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.322
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.322
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.330
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.331
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.340
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.340
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.359
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.360
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.360
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#5]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.361
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.364
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.364
+!MESSAGE XSCT Command: [version -server], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.365
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.366
+!MESSAGE XSCT Command: [version], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.366
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.366
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.369
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.369
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.376
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.376
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.378
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.378
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.384
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.385
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.387
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.387
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.394
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.395
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.397
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.398
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.403
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.404
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.410
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.411
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.411
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.412
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.413
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.413
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.424
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.424
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.455
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.455
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.467
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.468
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.587
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.671
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.684
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.684
+!MESSAGE XSCT Command: [con], Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:20:07.702
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-37
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:43.549
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:43.551
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.136
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.137
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#5]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.137
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.140
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.140
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.142
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.143
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.150
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.151
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.159
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.159
+!MESSAGE XSCT Command: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:48.572
+!MESSAGE XSCT command with result: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:49.379
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:49.380
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:51.513
+!MESSAGE XSCT Command: [disconnect tcfchan#5], Thread: Thread-397
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:51.515
+!MESSAGE XSCT command with result: [disconnect tcfchan#5], Result: [null, ]. Thread: Thread-397
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-12-03 20:21:52.525
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.525
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.528
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#6]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.528
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.545
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.545
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.548
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.548
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.555
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.555
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.566
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.566
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.589
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.589
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.590
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#6]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.590
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.592
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.593
+!MESSAGE XSCT Command: [version -server], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.604
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.605
+!MESSAGE XSCT Command: [version], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.605
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.605
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.608
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.608
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.614
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.614
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.616
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.617
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.623
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.624
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.626
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.627
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.633
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.633
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.635
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Basys3 210183B31B4FA]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.636
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.642
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.643
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.649
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.650
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.650
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.651
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.652
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.652
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.664
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.664
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.700
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.700
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.713
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.713
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.843
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.903
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.916
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.916
+!MESSAGE XSCT Command: [con], Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:21:52.920
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-29
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:35:06.756
+!MESSAGE XSCT Command: [disconnect tcfchan#6], Thread: Thread-454
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-03 20:35:06.758
+!MESSAGE XSCT command with result: [disconnect tcfchan#6], Result: [null, ]. Thread: Thread-454
+!SESSION 2025-12-04 23:03:38.869 -----------------------------------------------
+eclipse.buildId=2018.2
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk
+
+!ENTRY org.eclipse.ui 2 0 2025-12-04 23:03:50.490
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-12-04 23:03:50.490
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2025-12-04 23:03:50.913
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-12-04 23:03:50.913
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:56.728
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-1
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:56.729
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:58.566
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-1
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:58.566
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:58.567
+!MESSAGE XSCT Command: [setws C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk], Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:58.568
+!MESSAGE XSCT command with result: [setws C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk], Result: [null, ]. Thread: Thread-16
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:03:58.578
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:00.109
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, ]. Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:08.484
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_tag_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:08.486
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_tag_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, {"microblaze_0": "mb_system/Game_Design_i/microblaze_0:mb_system/Game_Design_i/microblaze_0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:08.487
+!MESSAGE XSCT Command: [::hsi::utils::get_all_periphs -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:08.490
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_periphs -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"axi_uartlite_0": {"hier_name": "axi_uartlite_0",
+"type": "axi_uartlite",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"clk_wiz_0": {"hier_name": "clk_wiz_0",
+"type": "clk_wiz",
+"version": "6.0",
+"ip_type": "PERIPHERAL",
+},
+"mdm_1": {"hier_name": "mdm_1",
+"type": "mdm",
+"version": "3.2",
+"ip_type": "DEBUG",
+},
+"microblaze_0": {"hier_name": "microblaze_0",
+"type": "microblaze",
+"version": "10.0",
+"ip_type": "PROCESSOR",
+},
+"microblaze_0_axi_periph": {"hier_name": "microblaze_0_axi_periph",
+"type": "axi_interconnect",
+"version": "2.1",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {"hier_name": "microblaze_0_local_memory_dlmb_bram_if_cntlr",
+"type": "lmb_bram_if_cntlr",
+"version": "4.0",
+"ip_type": "MEMORY_CNTLR",
+},
+"microblaze_0_local_memory_dlmb_v10": {"hier_name": "microblaze_0_local_memory_dlmb_v10",
+"type": "lmb_v10",
+"version": "3.0",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {"hier_name": "microblaze_0_local_memory_ilmb_bram_if_cntlr",
+"type": "lmb_bram_if_cntlr",
+"version": "4.0",
+"ip_type": "MEMORY_CNTLR",
+},
+"microblaze_0_local_memory_ilmb_v10": {"hier_name": "microblaze_0_local_memory_ilmb_v10",
+"type": "lmb_v10",
+"version": "3.0",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_lmb_bram": {"hier_name": "microblaze_0_local_memory_lmb_bram",
+"type": "blk_mem_gen",
+"version": "8.4",
+"ip_type": "MEMORY",
+},
+"myip_0": {"hier_name": "myip_0",
+"type": "myip",
+"version": "1.0",
+"ip_type": "PERIPHERAL",
+},
+"rst_clk_wiz_0_100M": {"hier_name": "rst_clk_wiz_0_100M",
+"type": "proc_sys_reset",
+"version": "5.0",
+"ip_type": "PERIPHERAL",
+},
+"vsync_input": {"hier_name": "vsync_input",
+"type": "axi_gpio",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:08.536
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:08.538
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"device": "7a35t",
+"family": "artix7",
+"timestamp": "Tue Nov 25 23:18:11 2025",
+"vivado_version": "2018.2.2",
+"part": "xc7a35tcpg236-1",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:09.714
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_ENDIANNESS], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:09.715
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_ENDIANNESS], Result: [null, 1]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:09.737
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:09.738
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:09.739
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_BASE_VECTORS], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:09.741
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_BASE_VECTORS], Result: [null, 0x0000000000000000]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:14.701
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:17.020
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:17.021
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:18.450
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:18.452
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:18.455
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:18.456
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:18.464
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:18.465
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:19.331
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:19.331
+!MESSAGE XSCT Command: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:19.746
+!MESSAGE XSCT command with result: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:20.549
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:20.550
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-12-04 23:04:44.462
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.464
+!MESSAGE XSCT Command: [::hsi::utils::get_ps_config_params -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.466
+!MESSAGE XSCT command with result: [::hsi::utils::get_ps_config_params -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.466
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.471
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"axi_uartlite_0": {"RX_FIFO": {"description": "Receive data FIFO",
+"address_offset": "0x0",
+"access": "read-only",
+"size": "32",
+"fields": {"RX_DATA": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "UART Receive Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"TX_FIFO": {"description": "Transmit data FIFO",
+"address_offset": "0x4",
+"access": "write-only",
+"size": "32",
+"fields": {"TX_DATA": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "UART Transmit Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"CTRL_REG": {"description": "UART Lite control register",
+"address_offset": "0xC",
+"access": "write-only",
+"size": "32",
+"fields": {"RST_TXFIFO": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Reset/clear the transmit FIFO
+Writing a 1 to this bit position clears the transmit FIFO
+  0 - Do nothing
+  1 - Clear the transmit FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RST_RXFIFO": {"access": "write-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Reset/clear the receive FIFO
+Writing a 1 to this bit position clears the receive FIFO
+  0 - Do nothing
+  1 - Clear the receive FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Enable_Intr": {"access": "write-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable interrupt for the AXI UART Lite
+  0 - Disable interrupt signal
+  1 - Enable interrupt signal
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"STAT_REG": {"description": "UART Lite status register",
+"address_offset": "0x8",
+"access": "read-only",
+"size": "32",
+"fields": {"RX_FIFO_Valid_Data": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the receive FIFO has data.
+  0 - Receive FIFO is empty
+  1 - Receive FIFO has data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Full": {"access": "read-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the receive FIFO is full.
+  0 - Receive FIFO is not full
+  1 - Receive FIFO is full
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the transmit FIFO is empty.
+  0 - Transmit FIFO is not empty
+  1 - Transmit FIFO is empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Full": {"access": "read-only",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the transmit FIFO is full.
+  0 - Transmit FIFO is not full
+  1 - Transmit FIFO is full
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Intr_Enabled": {"access": "read-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that interrupts is enabled.
+  0 - Interrupt is disabled
+  1 - Interrupt is enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Overrun_Error": {"access": "read-only",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a overrun error has occurred after the last time the status register was read. Overrun is when a new character has been received but the receive FIFO is full. The received character is ignored and not written into the receive FIFO. This bit is cleared when the status register is read.      0 - No overrun error has occurred      1 - Overrun error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Frame_Error": {"access": "read-only",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a frame error has occurred after the last time the status register was read. Frame error is defined as detection of a stop bit with the value 0. The receive character is ignored and not written to the receive FIFO. This bit is cleared when the status register is read.      0 - No frame error has occurred   1 - Frame error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Parity_Error": {"access": "read-only",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a parity error has occurred after the last time the status register was read. If the UART is configured without any parity handling, this bit is always 0. The received character is written into the receive FIFO. This bit is cleared when the status register is read.      0 - No parity error has occurred      1 - Parity error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {},
+"myip_0": {},
+"vsync_input": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "1",
+"fields": {"Channel-1 GPIO DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "1",
+"fields": {"Channel-1 GPIO TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-2 GPIO DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-2 GPIO TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GIER": {"description": "Global Interrupt Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"fields": {"Global Interrupt Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-1 Interrupt Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel-2 Interrupt Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-1 Interrupt Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel-2 Interrupt Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+},
+}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.473
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.475
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"vsync_input_S_AXI": {"name": "vsync_input",
+"base": "0x40000000",
+"high": "0x4000FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"axi_uartlite_0_S_AXI": {"name": "axi_uartlite_0",
+"base": "0x40600000",
+"high": "0x4060FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"myip_0_S00_AXI": {"name": "myip_0",
+"base": "0x44A00000",
+"high": "0x44A0FFFF",
+"size": "65536",
+"slaveintf": "S00_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr_SLMB_Mem": {"name": "microblaze_0_local_memory_dlmb_bram_if_cntlr",
+"base": "0x00000000",
+"high": "0x00007FFF",
+"size": "32768",
+"slaveintf": "SLMB",
+"type": "MEMORY",
+"flags": "7",
+"segment": "Mem",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.476
+!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.477
+!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"microblaze_0": {"bscan": "2",
+"index": "0",
+},
+}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.479
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.480
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, {}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.480
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.482
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, {"microblaze_0": {},
+}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.482
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.497
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, microblaze_0]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.497
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_ENABLED], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.498
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_ENABLED], Result: [null, 1]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.499
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.500
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Result: [null, 5]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.513
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.514
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Result: [null, 32]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.514
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_FREQ], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.515
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_FREQ], Result: [null, 100000000]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.515
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.529
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.530
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.532
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.533
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.534
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.535
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.544
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.544
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.553
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.553
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.576
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.576
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.577
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.577
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.591
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.592
+!MESSAGE XSCT Command: [version -server], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.593
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.593
+!MESSAGE XSCT Command: [version], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.593
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.607
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.610
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.610
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.623
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.623
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.626
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.626
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.632
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.633
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.636
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.636
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.643
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.643
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.645
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.646
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.652
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.653
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.660
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.661
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.662
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.662
+!MESSAGE XSCT Command: [::hsi::utils::get_clock_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.664
+!MESSAGE XSCT command with result: [::hsi::utils::get_clock_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"Clk": "100000000",
+"Dbg_Clk": "",
+}]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.665
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.671
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.671
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.683
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:44.683
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.016
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.017
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.033
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.033
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.160
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.259
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.276
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.276
+!MESSAGE XSCT Command: [con], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-04 23:04:45.283
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 14:35:05.496
+!MESSAGE XSCT Command: [disconnect tcfchan#1], Thread: Thread-82
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 14:35:05.498
+!MESSAGE XSCT command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-82
+!SESSION 2025-12-05 18:15:43.472 -----------------------------------------------
+eclipse.buildId=2018.2
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk
+
+!ENTRY org.eclipse.ui 2 0 2025-12-05 18:15:53.583
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-12-05 18:15:53.583
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2025-12-05 18:15:53.938
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-12-05 18:15:53.939
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:15:59.162
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-4
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:15:59.163
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:15:59.166
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:15:59.177
+!MESSAGE XSCT Command: [setws C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk], Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:16:00.843
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-4
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:16:00.844
+!MESSAGE XSCT command with result: [setws C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk], Result: [null, ]. Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:16:00.854
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:16:02.316
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, ]. Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:26.219
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_tag_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:26.221
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_tag_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, {"microblaze_0": "mb_system/Game_Design_i/microblaze_0:mb_system/Game_Design_i/microblaze_0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:26.223
+!MESSAGE XSCT Command: [::hsi::utils::get_all_periphs -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:26.225
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_periphs -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"axi_uartlite_0": {"hier_name": "axi_uartlite_0",
+"type": "axi_uartlite",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"clk_wiz_0": {"hier_name": "clk_wiz_0",
+"type": "clk_wiz",
+"version": "6.0",
+"ip_type": "PERIPHERAL",
+},
+"mdm_1": {"hier_name": "mdm_1",
+"type": "mdm",
+"version": "3.2",
+"ip_type": "DEBUG",
+},
+"microblaze_0": {"hier_name": "microblaze_0",
+"type": "microblaze",
+"version": "10.0",
+"ip_type": "PROCESSOR",
+},
+"microblaze_0_axi_periph": {"hier_name": "microblaze_0_axi_periph",
+"type": "axi_interconnect",
+"version": "2.1",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {"hier_name": "microblaze_0_local_memory_dlmb_bram_if_cntlr",
+"type": "lmb_bram_if_cntlr",
+"version": "4.0",
+"ip_type": "MEMORY_CNTLR",
+},
+"microblaze_0_local_memory_dlmb_v10": {"hier_name": "microblaze_0_local_memory_dlmb_v10",
+"type": "lmb_v10",
+"version": "3.0",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {"hier_name": "microblaze_0_local_memory_ilmb_bram_if_cntlr",
+"type": "lmb_bram_if_cntlr",
+"version": "4.0",
+"ip_type": "MEMORY_CNTLR",
+},
+"microblaze_0_local_memory_ilmb_v10": {"hier_name": "microblaze_0_local_memory_ilmb_v10",
+"type": "lmb_v10",
+"version": "3.0",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_lmb_bram": {"hier_name": "microblaze_0_local_memory_lmb_bram",
+"type": "blk_mem_gen",
+"version": "8.4",
+"ip_type": "MEMORY",
+},
+"myip_0": {"hier_name": "myip_0",
+"type": "myip",
+"version": "1.0",
+"ip_type": "PERIPHERAL",
+},
+"rst_clk_wiz_0_100M": {"hier_name": "rst_clk_wiz_0_100M",
+"type": "proc_sys_reset",
+"version": "5.0",
+"ip_type": "PERIPHERAL",
+},
+"vsync_input": {"hier_name": "vsync_input",
+"type": "axi_gpio",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:26.275
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:26.276
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"device": "7a35t",
+"family": "artix7",
+"timestamp": "Tue Nov 25 23:18:11 2025",
+"vivado_version": "2018.2.2",
+"part": "xc7a35tcpg236-1",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:27.829
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_ENDIANNESS], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:27.830
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_ENDIANNESS], Result: [null, 1]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:27.853
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:27.855
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:27.856
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_BASE_VECTORS], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:27.858
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_BASE_VECTORS], Result: [null, 0x0000000000000000]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:32.778
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:35.042
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:35.043
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:36.455
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:36.457
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:36.460
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:36.460
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:36.467
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:36.468
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:37.378
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:37.378
+!MESSAGE XSCT Command: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:37.786
+!MESSAGE XSCT command with result: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:38.600
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:38.602
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-12-05 18:26:41.965
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.968
+!MESSAGE XSCT Command: [::hsi::utils::get_ps_config_params -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.969
+!MESSAGE XSCT command with result: [::hsi::utils::get_ps_config_params -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.970
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.974
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"axi_uartlite_0": {"RX_FIFO": {"description": "Receive data FIFO",
+"address_offset": "0x0",
+"access": "read-only",
+"size": "32",
+"fields": {"RX_DATA": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "UART Receive Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"TX_FIFO": {"description": "Transmit data FIFO",
+"address_offset": "0x4",
+"access": "write-only",
+"size": "32",
+"fields": {"TX_DATA": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "UART Transmit Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"CTRL_REG": {"description": "UART Lite control register",
+"address_offset": "0xC",
+"access": "write-only",
+"size": "32",
+"fields": {"RST_TXFIFO": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Reset/clear the transmit FIFO
+Writing a 1 to this bit position clears the transmit FIFO
+  0 - Do nothing
+  1 - Clear the transmit FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RST_RXFIFO": {"access": "write-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Reset/clear the receive FIFO
+Writing a 1 to this bit position clears the receive FIFO
+  0 - Do nothing
+  1 - Clear the receive FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Enable_Intr": {"access": "write-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable interrupt for the AXI UART Lite
+  0 - Disable interrupt signal
+  1 - Enable interrupt signal
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"STAT_REG": {"description": "UART Lite status register",
+"address_offset": "0x8",
+"access": "read-only",
+"size": "32",
+"fields": {"RX_FIFO_Valid_Data": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the receive FIFO has data.
+  0 - Receive FIFO is empty
+  1 - Receive FIFO has data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Full": {"access": "read-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the receive FIFO is full.
+  0 - Receive FIFO is not full
+  1 - Receive FIFO is full
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the transmit FIFO is empty.
+  0 - Transmit FIFO is not empty
+  1 - Transmit FIFO is empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Full": {"access": "read-only",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the transmit FIFO is full.
+  0 - Transmit FIFO is not full
+  1 - Transmit FIFO is full
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Intr_Enabled": {"access": "read-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that interrupts is enabled.
+  0 - Interrupt is disabled
+  1 - Interrupt is enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Overrun_Error": {"access": "read-only",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a overrun error has occurred after the last time the status register was read. Overrun is when a new character has been received but the receive FIFO is full. The received character is ignored and not written into the receive FIFO. This bit is cleared when the status register is read.      0 - No overrun error has occurred      1 - Overrun error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Frame_Error": {"access": "read-only",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a frame error has occurred after the last time the status register was read. Frame error is defined as detection of a stop bit with the value 0. The receive character is ignored and not written to the receive FIFO. This bit is cleared when the status register is read.      0 - No frame error has occurred   1 - Frame error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Parity_Error": {"access": "read-only",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a parity error has occurred after the last time the status register was read. If the UART is configured without any parity handling, this bit is always 0. The received character is written into the receive FIFO. This bit is cleared when the status register is read.      0 - No parity error has occurred      1 - Parity error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {},
+"myip_0": {},
+"vsync_input": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "1",
+"fields": {"Channel-1 GPIO DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "1",
+"fields": {"Channel-1 GPIO TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-2 GPIO DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-2 GPIO TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GIER": {"description": "Global Interrupt Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"fields": {"Global Interrupt Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-1 Interrupt Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel-2 Interrupt Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-1 Interrupt Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel-2 Interrupt Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+},
+}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.975
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.978
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"vsync_input_S_AXI": {"name": "vsync_input",
+"base": "0x40000000",
+"high": "0x4000FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"axi_uartlite_0_S_AXI": {"name": "axi_uartlite_0",
+"base": "0x40600000",
+"high": "0x4060FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"myip_0_S00_AXI": {"name": "myip_0",
+"base": "0x44A00000",
+"high": "0x44A0FFFF",
+"size": "65536",
+"slaveintf": "S00_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr_SLMB_Mem": {"name": "microblaze_0_local_memory_dlmb_bram_if_cntlr",
+"base": "0x00000000",
+"high": "0x00007FFF",
+"size": "32768",
+"slaveintf": "SLMB",
+"type": "MEMORY",
+"flags": "7",
+"segment": "Mem",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.979
+!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.980
+!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"microblaze_0": {"bscan": "2",
+"index": "0",
+},
+}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.981
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.983
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, {}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.983
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.988
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, {"microblaze_0": {},
+}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.989
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.990
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, microblaze_0]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:41.990
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_ENABLED], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.003
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_ENABLED], Result: [null, 1]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.004
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.005
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Result: [null, 5]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.005
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.019
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Result: [null, 32]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.019
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_FREQ], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.020
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_FREQ], Result: [null, 100000000]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.021
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.034
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.034
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.038
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.038
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.050
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.050
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.057
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.057
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.929
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.930
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.970
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.971
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.971
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.972
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.984
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.985
+!MESSAGE XSCT Command: [version -server], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.987
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.988
+!MESSAGE XSCT Command: [version], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.988
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:42.989
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.000
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.000
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.008
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.008
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.011
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.011
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.017
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.018
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.021
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.021
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.027
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.028
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.030
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.031
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.037
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.037
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.043
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.044
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.044
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.045
+!MESSAGE XSCT Command: [::hsi::utils::get_clock_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.062
+!MESSAGE XSCT command with result: [::hsi::utils::get_clock_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"Clk": "100000000",
+"Dbg_Clk": "",
+}]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.063
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.064
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.064
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.929
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.929
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.952
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.953
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.965
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:43.965
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:44.099
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:44.146
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:45.021
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:45.022
+!MESSAGE XSCT Command: [con], Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 18:26:45.025
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-11
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 21:17:36.644
+!MESSAGE XSCT Command: [disconnect tcfchan#1], Thread: Thread-85
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-05 21:17:36.652
+!MESSAGE XSCT command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-85
+!SESSION 2025-12-06 12:45:48.625 -----------------------------------------------
+eclipse.buildId=2018.2
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk
+
+!ENTRY org.eclipse.ui 2 0 2025-12-06 12:45:59.740
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-12-06 12:45:59.740
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2025-12-06 12:46:00.244
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-12-06 12:46:00.244
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:06.097
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-0
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:06.098
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:08.194
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-0
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:08.194
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:08.195
+!MESSAGE XSCT Command: [setws C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk], Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:08.196
+!MESSAGE XSCT command with result: [setws C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk], Result: [null, ]. Thread: Thread-17
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:08.206
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:09.739
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, ]. Thread: Worker-6
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:11.156
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_tag_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:11.159
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_tag_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, {"microblaze_0": "mb_system/Game_Design_i/microblaze_0:mb_system/Game_Design_i/microblaze_0",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:11.161
+!MESSAGE XSCT Command: [::hsi::utils::get_all_periphs -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:11.164
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_periphs -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"axi_uartlite_0": {"hier_name": "axi_uartlite_0",
+"type": "axi_uartlite",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+"clk_wiz_0": {"hier_name": "clk_wiz_0",
+"type": "clk_wiz",
+"version": "6.0",
+"ip_type": "PERIPHERAL",
+},
+"mdm_1": {"hier_name": "mdm_1",
+"type": "mdm",
+"version": "3.2",
+"ip_type": "DEBUG",
+},
+"microblaze_0": {"hier_name": "microblaze_0",
+"type": "microblaze",
+"version": "10.0",
+"ip_type": "PROCESSOR",
+},
+"microblaze_0_axi_periph": {"hier_name": "microblaze_0_axi_periph",
+"type": "axi_interconnect",
+"version": "2.1",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {"hier_name": "microblaze_0_local_memory_dlmb_bram_if_cntlr",
+"type": "lmb_bram_if_cntlr",
+"version": "4.0",
+"ip_type": "MEMORY_CNTLR",
+},
+"microblaze_0_local_memory_dlmb_v10": {"hier_name": "microblaze_0_local_memory_dlmb_v10",
+"type": "lmb_v10",
+"version": "3.0",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {"hier_name": "microblaze_0_local_memory_ilmb_bram_if_cntlr",
+"type": "lmb_bram_if_cntlr",
+"version": "4.0",
+"ip_type": "MEMORY_CNTLR",
+},
+"microblaze_0_local_memory_ilmb_v10": {"hier_name": "microblaze_0_local_memory_ilmb_v10",
+"type": "lmb_v10",
+"version": "3.0",
+"ip_type": "BUS",
+},
+"microblaze_0_local_memory_lmb_bram": {"hier_name": "microblaze_0_local_memory_lmb_bram",
+"type": "blk_mem_gen",
+"version": "8.4",
+"ip_type": "MEMORY",
+},
+"myip_0": {"hier_name": "myip_0",
+"type": "myip",
+"version": "1.0",
+"ip_type": "PERIPHERAL",
+},
+"rst_clk_wiz_0_100M": {"hier_name": "rst_clk_wiz_0_100M",
+"type": "proc_sys_reset",
+"version": "5.0",
+"ip_type": "PERIPHERAL",
+},
+"vsync_input": {"hier_name": "vsync_input",
+"type": "axi_gpio",
+"version": "2.0",
+"ip_type": "PERIPHERAL",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:11.215
+!MESSAGE XSCT Command: [::hsi::utils::get_design_properties -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:11.216
+!MESSAGE XSCT command with result: [::hsi::utils::get_design_properties -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"device": "7a35t",
+"family": "artix7",
+"timestamp": "Tue Nov 25 23:18:11 2025",
+"vivado_version": "2018.2.2",
+"part": "xc7a35tcpg236-1",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:12.278
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_ENDIANNESS], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:12.280
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_ENDIANNESS], Result: [null, 1]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:12.304
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:12.305
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:12.306
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_BASE_VECTORS], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:12.307
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_BASE_VECTORS], Result: [null, 0x0000000000000000]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:18.654
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:21.018
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:21.020
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:22.534
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:22.536
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:22.540
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:22.540
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:22.548
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:22.550
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:23.419
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:23.420
+!MESSAGE XSCT Command: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:23.831
+!MESSAGE XSCT command with result: [fpga -file C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/download.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:24.643
+!MESSAGE XSCT Command: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:46:24.645
+!MESSAGE XSCT command with result: [::hsi::utils::get_bram_blocks C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf ], Result: [null, microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 1 0 2025-12-06 12:47:33.425
+!MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.426
+!MESSAGE XSCT Command: [::hsi::utils::get_ps_config_params -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.428
+!MESSAGE XSCT command with result: [::hsi::utils::get_ps_config_params -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.429
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.435
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"axi_uartlite_0": {"RX_FIFO": {"description": "Receive data FIFO",
+"address_offset": "0x0",
+"access": "read-only",
+"size": "32",
+"fields": {"RX_DATA": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "UART Receive Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"TX_FIFO": {"description": "Transmit data FIFO",
+"address_offset": "0x4",
+"access": "write-only",
+"size": "32",
+"fields": {"TX_DATA": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "8",
+"desc": "UART Transmit Data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"CTRL_REG": {"description": "UART Lite control register",
+"address_offset": "0xC",
+"access": "write-only",
+"size": "32",
+"fields": {"RST_TXFIFO": {"access": "write-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Reset/clear the transmit FIFO
+Writing a 1 to this bit position clears the transmit FIFO
+  0 - Do nothing
+  1 - Clear the transmit FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RST_RXFIFO": {"access": "write-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Reset/clear the receive FIFO
+Writing a 1 to this bit position clears the receive FIFO
+  0 - Do nothing
+  1 - Clear the receive FIFO
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Enable_Intr": {"access": "write-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable interrupt for the AXI UART Lite
+  0 - Disable interrupt signal
+  1 - Enable interrupt signal
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"STAT_REG": {"description": "UART Lite status register",
+"address_offset": "0x8",
+"access": "read-only",
+"size": "32",
+"fields": {"RX_FIFO_Valid_Data": {"access": "read-only",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the receive FIFO has data.
+  0 - Receive FIFO is empty
+  1 - Receive FIFO has data
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"RX_FIFO_Full": {"access": "read-only",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the receive FIFO is full.
+  0 - Receive FIFO is not full
+  1 - Receive FIFO is full
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Empty": {"access": "read-only",
+"bit_offset": "2",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the transmit FIFO is empty.
+  0 - Transmit FIFO is not empty
+  1 - Transmit FIFO is empty
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"TX_FIFO_Full": {"access": "read-only",
+"bit_offset": "3",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates if the transmit FIFO is full.
+  0 - Transmit FIFO is not full
+  1 - Transmit FIFO is full
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Intr_Enabled": {"access": "read-only",
+"bit_offset": "4",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that interrupts is enabled.
+  0 - Interrupt is disabled
+  1 - Interrupt is enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Overrun_Error": {"access": "read-only",
+"bit_offset": "5",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a overrun error has occurred after the last time the status register was read. Overrun is when a new character has been received but the receive FIFO is full. The received character is ignored and not written into the receive FIFO. This bit is cleared when the status register is read.      0 - No overrun error has occurred      1 - Overrun error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Frame_Error": {"access": "read-only",
+"bit_offset": "6",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a frame error has occurred after the last time the status register was read. Frame error is defined as detection of a stop bit with the value 0. The receive character is ignored and not written to the receive FIFO. This bit is cleared when the status register is read.      0 - No frame error has occurred   1 - Frame error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Parity_Error": {"access": "read-only",
+"bit_offset": "7",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Indicates that a parity error has occurred after the last time the status register was read. If the UART is configured without any parity handling, this bit is always 0. The received character is written into the receive FIFO. This bit is cleared when the status register is read.      0 - No parity error has occurred      1 - Parity error has occurred
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {},
+"myip_0": {},
+"vsync_input": {"GPIO_DATA": {"description": "Channel-1 AXI GPIO Data register",
+"address_offset": "0x0",
+"access": "read-write",
+"size": "1",
+"fields": {"Channel-1 GPIO DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO_TRI": {"description": "Channel-1 AXI GPIO 3-State Control register",
+"address_offset": "0x4",
+"access": "read-write",
+"size": "1",
+"fields": {"Channel-1 GPIO TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO2_DATA": {"description": "Channel-2 AXI GPIO Data register",
+"address_offset": "0x8",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-2 GPIO DATA": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO Data Register.
+For each I/O bit programmed as input
+  R - Reads value on the input pin.
+  W - No effect.
+For each I/O bit programmed as output
+  R - Reads value on GPIO_O pins
+  W - Writes value to the corresponding AXI GPIO 
+      data register bit and output pin
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GPIO2_TRI": {"description": "Channel-2 AXI GPIO 3-State Control register",
+"address_offset": "0xC",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-2 GPIO TRI": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "32",
+"desc": "AXI GPIO 3-State Control Register
+Each I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"GIER": {"description": "Global Interrupt Enable register",
+"address_offset": "0x11C",
+"access": "read-write",
+"size": "32",
+"fields": {"Global Interrupt Enable": {"access": "read-write",
+"bit_offset": "31",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Master enable for the device interrupt output
+  0 - Disabled
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"IP_IER": {"description": "IP Interrupt Enable register",
+"address_offset": "0x128",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-1 Interrupt Enable": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 1 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel-2 Interrupt Enable": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Enable Channel 2 Interrupt
+  0 - Disabled (masked)
+  1 - Enabled
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+"IP_ISR": {"description": "IP Interrupt Status register",
+"address_offset": "0x120",
+"access": "read-write",
+"size": "32",
+"fields": {"Channel-1 Interrupt Status": {"access": "read-write",
+"bit_offset": "0",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 1 Interrupt Status
+  0 - No Channel 1 input interrupt
+  1 - Channel 1 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+"Channel-2 Interrupt Status": {"access": "read-write",
+"bit_offset": "1",
+"bit_range": "",
+"bit_width": "1",
+"desc": "Channel 2 Interrupt Status
+  0 - No Channel 2 input interrupt
+  1 - Channel 2 input interrupt
+",
+"enum_values": "",
+"lsb": "",
+"mod_write_val": "",
+"msb": "",
+"read_action": "",
+},
+},
+},
+},
+}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.436
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.439
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"vsync_input_S_AXI": {"name": "vsync_input",
+"base": "0x40000000",
+"high": "0x4000FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"axi_uartlite_0_S_AXI": {"name": "axi_uartlite_0",
+"base": "0x40600000",
+"high": "0x4060FFFF",
+"size": "65536",
+"slaveintf": "S_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"myip_0_S00_AXI": {"name": "myip_0",
+"base": "0x44A00000",
+"high": "0x44A0FFFF",
+"size": "65536",
+"slaveintf": "S00_AXI",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr_SLMB_Mem": {"name": "microblaze_0_local_memory_dlmb_bram_if_cntlr",
+"base": "0x00000000",
+"high": "0x00007FFF",
+"size": "32768",
+"slaveintf": "SLMB",
+"type": "MEMORY",
+"flags": "7",
+"segment": "Mem",
+"acctype": "",
+"tz": "",
+},
+}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.440
+!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.442
+!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf], Result: [null, {"microblaze_0": {"bscan": "2",
+"index": "0",
+},
+}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.444
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.446
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, {}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.446
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.457
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, {"microblaze_0": {},
+}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.458
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.459
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf mdm_1], Result: [null, microblaze_0]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.459
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_ENABLED], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.474
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_ENABLED], Result: [null, 1]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.474
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.475
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Result: [null, 5]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.475
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.476
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Result: [null, 32]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.477
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_FREQ], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.478
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0 C_FREQ], Result: [null, 100000000]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.490
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.491
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.491
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.494
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.494
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.497
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.497
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.506
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.507
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.515
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==0} -index 0], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.515
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.538
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.539
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.540
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.540
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.554
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.554
+!MESSAGE XSCT Command: [version -server], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.555
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.556
+!MESSAGE XSCT Command: [version], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.556
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.570
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.572
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.573
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.585
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.586
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.588
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.589
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.595
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.596
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.598
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.599
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.607
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.608
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.611
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Basys3 210183B31B4FA]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.611
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.618
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Basys3 210183B31B4FA" && level==1}], Result: [null,      2  xc7a35t (idcode 0362d093 irlen 6 fpga)]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.618
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.625
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Basys3 210183B31B4FA" && level == 0}], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.626
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.627
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.628
+!MESSAGE XSCT Command: [::hsi::utils::get_clock_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.631
+!MESSAGE XSCT command with result: [::hsi::utils::get_clock_info -json C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/top_hw_platform_1/system.hdf microblaze_0], Result: [null, {"Clk": "100000000",
+"Dbg_Clk": "",
+}]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.632
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.634
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.634
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.647
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.647
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.668
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.668
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.681
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.681
+!MESSAGE XSCT Command: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.801
+!MESSAGE XSCT command with result: [dow C:/Users/forsh/Desktop/Everything/Vivado_Labs/Lab_5_152_B3_29Nov/Lab_5_152_B3/Lab_5_152_B3.sdk/Gravity_Platformer/Debug/Gravity_Platformer.elf], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.873
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.889
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Basys3 210183B31B4FA"} -index 0], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.889
+!MESSAGE XSCT Command: [con], Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 12:47:33.892
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-7
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 20:31:08.034
+!MESSAGE XSCT Command: [disconnect tcfchan#1], Thread: Thread-89
+
+!ENTRY com.xilinx.sdk.utils 0 0 2025-12-06 20:31:08.042
+!MESSAGE XSCT command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-89

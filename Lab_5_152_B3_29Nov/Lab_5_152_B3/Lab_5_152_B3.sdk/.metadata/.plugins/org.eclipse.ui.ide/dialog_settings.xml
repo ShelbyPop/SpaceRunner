@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\forsh\Desktop\Everything\Vivado_Labs\Lab_5_152_B3_29Nov\Lab_5_152_B3\Lab_5_152_B3.sdk"/>
+		<item value="C:\Users\rohit\Desktop\CS_M152B\22NOV_CODE\Lab_5_152_B3_22Nov\Lab_5_152_B3\Lab_5_152_B3.sdk"/>
+	</list>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="834" key="DIALOG_X_ORIGIN"/>
+		<item value="197" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
